@@ -364,7 +364,7 @@ cd src && python -m pytest -v --update-goldens
 
 ```text
 TICK=   4  mPC=21(EXEC_IN     )  PC=  2→3    IR=IN 0       TODS=104('h')  NEXT=·       TORS=1    Z   ds=1 rs=1   IN[0]=104('h')
-
+```
 ### CI
 
 Настройка CI находится в файле [.github/workflows/python.yaml](.github/workflows/python.yaml).
