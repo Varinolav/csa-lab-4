@@ -113,17 +113,19 @@ class DataPath:
         self.ds.pop()
 
     def mem_read(self, addr):
-        if not 0 <= addr < len(self.data_mem):
+        idx = addr // 4
+        if not 0 <= idx < len(self.data_mem):
             raise RuntimeError(f"LOAD по адресу {addr} вне памяти данных")
-        return self.data_mem[addr]
+        return self.data_mem[idx]
 
     def mem_write(self, addr, value):
-        if not 0 <= addr < len(self.data_mem):
+        idx = addr // 4
+        if not 0 <= idx < len(self.data_mem):
             raise RuntimeError(f"STORE по адресу {addr} вне памяти данных")
         word = value & 0xFFFFFFFF
         if word >= (1 << 31):
             word -= 1 << 32
-        self.data_mem[addr] = word
+        self.data_mem[idx] = word
 
     def tos(self):
         return self.ds[-1] if self.ds else None
@@ -198,7 +200,7 @@ class ControlUnit:
         return report
 
     def _latch_ir(self, mi):
-        return self.code_mem[self.pc] if mi.latch_ir else self.ir
+        return self.code_mem[self.pc // 4] if mi.latch_ir else self.ir
 
     def _eval_alu(self, mi):
         if mi.alu_op == AluOp.NOP:
@@ -256,8 +258,8 @@ class ControlUnit:
         return ""
 
     def _commit_rs(self, mi, pc_before):
-        if mi.rs_op == RsOp.PUSH_PC_PLUS_1:
-            self.rs_push(pc_before + 1)
+        if mi.rs_op == RsOp.PUSH_PC_PLUS_4:
+            self.rs_push(pc_before + 4)
         elif mi.rs_op == RsOp.POP:
             self.rs_pop()
 
@@ -286,13 +288,13 @@ class ControlUnit:
         if mi.jump_type == JumpType.UNCOND:
             return ir.arg
         if mi.jump_type == JumpType.COND_ZERO:
-            return ir.arg if zero_flag else pc + 1
+            return ir.arg if zero_flag else pc + 4
 
         sel = mi.sel_pc
         if sel == SelPc.KEEP:
             return pc
-        if sel == SelPc.INC:
-            return pc + 1
+        if sel == SelPc.PLUS4:
+            return pc + 4
         if sel == SelPc.TODS:
             top = self.dp.tos()
             if top is None:

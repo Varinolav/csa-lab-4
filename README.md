@@ -119,10 +119,10 @@ comment       = "(" , { not-")" } , ")"
         Instruction Memory                  Data Memory
         ──────────────────            ─────────────────────────────
    0x0  │ инструкция      │      0x0  │ variable cell #0          │
-   0x1  │ инструкция      │      0x1  │ variable cell #1          │
+   0x4  │ инструкция      │      0x4  │ variable cell #1          │
         │ ...             │           │ ...                       │
-        │ <user words>    │      0xV  │ pstr literal #0: len      │
-        │ __emit_str__    │      0xV+1│ pstr literal #0: ch0      │
+        │ <user words>    │     0x4V  │ pstr literal #0: len      │
+        │ __emit_str__    │     0x4V+4│ pstr literal #0: ch0      │
         └─────────────────┘           └───────────────────────────┘
 ```
 

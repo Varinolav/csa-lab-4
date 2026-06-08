@@ -143,13 +143,13 @@ def to_hex_dump(code, data) -> str:
     lines.append("; CODE SECTION")
     for addr, ins in enumerate(code_list):
         word = encode_instr(ins)
-        lines.append(f"{addr} - {word:08X} - {mnemonic(ins)}")
+        lines.append(f"{addr * 4} - {word:08X} - {mnemonic(ins)}")
 
     lines.append("")
     lines.append("; DATA SECTION")
     for addr, word in enumerate(data_list):
         unsigned = word & 0xFFFFFFFF
-        line = f"{addr} - {unsigned:08X} - {word}"
+        line = f"{addr * 4} - {unsigned:08X} - {word}"
         if 32 <= word < 127:
             line += f"   ; {chr(word)!r}"
         lines.append(line)
