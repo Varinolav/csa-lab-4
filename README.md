@@ -203,11 +203,11 @@ offset  size  поле
 
 ## Транслятор
 
-Интерфейс командной строки: `python src/translator.py <input.forth> <output.bin>`
+Интерфейс командной строки: `python translator.py <input.forth> <output.bin>`
 
 Создаёт два файла: `<output.bin>` и `<output.bin>.hex`.
 
-Реализован в модуле: [src/translator.py](src/translator.py).
+Реализован в модуле: [translator.py](translator.py).
 
 Этапы трансляции:
 
@@ -258,9 +258,9 @@ x load square x store
 
 ## Модель процессора
 
-Интерфейс командной строки: `python src/machine.py <code.bin> [<input.txt>] [--limit N] [--log {debug|info|warning|off}]`
+Интерфейс командной строки: `python machine.py <code.bin> [<input.txt>] [--limit N] [--log {debug|info|warning|off}]`
 
-Реализована в модуле: [src/machine.py](src/machine.py).
+Реализована в модуле: [machine.py](machine.py).
 
 ### DataPath
 
@@ -302,7 +302,7 @@ x load square x store
 
 Память микропрограмм -- 24 ячейки. Адрес 0 -- FETCH; адреса 1..23 -- execute (по одному такту на опкод). Итого **2 такта на инструкцию**.
 
-Реализована в модуле: [src/microcode.py](src/microcode.py).
+Реализована в модуле: [microcode.py](microcode.py).
 
 | μPC | Лейбл | alu_op | ds_op | sel_tos | sel_carry | mem | io | sel_pc | sel_mpc | прочее |
 | ---:| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -330,32 +330,32 @@ x load square x store
 
 ## Тестирование
 
-Тестирование выполняется при помощи golden-тестов, реализовано в: [src/golden_test.py](src/golden_test.py).
-Конфигурации (`src/golden/`):
+Тестирование выполняется при помощи golden-тестов, реализовано в: [golden_test.py](golden_test.py).
+Конфигурации (`golden/`):
 
 | Golden | Алгоритм | Что проверяет |
 | --- | --- | --- |
-| [hello.yml](src/golden/hello.yml) | hello | `pstr`-литералы, `."`, `__emit_str__`, `begin/while/repeat` |
-| [cat.yml](src/golden/cat.yml) | cat | `begin/again`, port I/O, остановка по EOF |
-| [hello_user_name.yml](src/golden/hello_user_name.yml) | hello_user_name | Чтение имени, приветствие, потоковый ввод-вывод |
-| [sort.yml](src/golden/sort.yml) | sort | Сортировка выбором; буфер через `variable buf 15 alloc`, `load`/`store` |
-| [double_arith.yml](src/golden/double_arith.yml) | арифметика двойной точности | 64-битное сложение; carry-флаг после ADD для переноса между словами |
-| [euler6.yml](src/golden/euler6.yml) | **alg2** | Project Euler #6 |
-| [exec_token.yml](src/golden/exec_token.yml) | демо `'`/`execute` | Execution token |
-| [pstr_demo.yml](src/golden/pstr_demo.yml) | демо `pstr` | Pascal-строки |
-| [harvard_demo.yml](src/golden/harvard_demo.yml) | демо Harvard | Раздельность памяти команд и данных |
-| [variables_demo.yml](src/golden/variables_demo.yml) | демо `variable` | `variable name = value` + `load`/`store` |
+| [hello.yml](golden/hello.yml) | hello | `pstr`-литералы, `."`, `__emit_str__`, `begin/while/repeat` |
+| [cat.yml](golden/cat.yml) | cat | `begin/again`, port I/O, остановка по EOF |
+| [hello_user_name.yml](golden/hello_user_name.yml) | hello_user_name | Чтение имени, приветствие, потоковый ввод-вывод |
+| [sort.yml](golden/sort.yml) | sort | Сортировка выбором; буфер через `variable buf 15 alloc`, `load`/`store` |
+| [double_arith.yml](golden/double_arith.yml) | арифметика двойной точности | 64-битное сложение; carry-флаг после ADD для переноса между словами |
+| [euler6.yml](golden/euler6.yml) | **alg2** | Project Euler #6 |
+| [exec_token.yml](golden/exec_token.yml) | демо `'`/`execute` | Execution token |
+| [pstr_demo.yml](golden/pstr_demo.yml) | демо `pstr` | Pascal-строки |
+| [harvard_demo.yml](golden/harvard_demo.yml) | демо Harvard | Раздельность памяти команд и данных |
+| [variables_demo.yml](golden/variables_demo.yml) | демо `variable` | `variable name = value` + `load`/`store` |
 
 Запустить тесты:
 
 ```shell
-cd src && python -m pytest -v
+python -m pytest -v
 ```
 
 Обновить эталоны:
 
 ```shell
-cd src && python -m pytest -v --update-goldens
+python -m pytest -v --update-goldens
 ```
 
 Пример журнала процессора (`--log debug`):
