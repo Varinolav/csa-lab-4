@@ -47,7 +47,7 @@ def test_translator_and_machine(golden, tmp_path):
     code_bin = target.read_bytes()
     code_hex = target_hex.read_text(encoding="utf-8")
 
-    assert base64.b64encode(code_bin).decode("ascii") == golden.out["out_code"]
-    assert code_hex == golden.out["out_code_hex"]
     assert out_stdout == golden.out["out_stdout"]
     assert log_text == golden.out["out_log"]
+    assert code_hex == golden.out["out_code_hex"]
+    assert base64.b64encode(code_bin).decode("ascii") == golden.out["out_code"]

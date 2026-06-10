@@ -270,8 +270,7 @@ def _decl_variable(prog: Program, tokens: list[Token], i: int) -> int:
     name = name_tok.value.lower()
     _check_name_free(name, prog, name_tok)
 
-    word_idx = len(prog.data_init)
-    addr = word_idx * 4  # byte address
+    addr = len(prog.data_init)
     prog.variables[name] = addr
     prog.data_init.append(0)
     i += 2
@@ -280,7 +279,7 @@ def _decl_variable(prog: Program, tokens: list[Token], i: int) -> int:
         if i + 1 >= n or not _is_int_literal(tokens[i + 1].value):
             msg = f"variable '{name}': ожидается целое после '=' (стр.{name_tok.line})"
             raise CompileError(msg)
-        prog.data_init[word_idx] = _parse_int(tokens[i + 1].value)
+        prog.data_init[addr] = _parse_int(tokens[i + 1].value)
         i += 2
 
     return i
@@ -310,7 +309,7 @@ class CodegenCtx:
         return idx
 
     def place_pstr(self, s: str) -> int:
-        addr = len(self.data) * 4  # byte address
+        addr = len(self.data)
         self.data.append(len(s))
         for ch in s:
             self.data.append(ord(ch))
@@ -331,12 +330,12 @@ def codegen(prog: Program) -> tuple[list[Instr], list[int]]:
     ctx.emit(Opcode.HALT)
 
     for name, wdef in prog.words.items():
-        ctx.word_addr[name] = len(ctx.code) * 4
+        ctx.word_addr[name] = len(ctx.code)
         _generate_block(ctx, wdef.body, is_word_body=True)
         ctx.emit(Opcode.RET)
 
     if ctx.uses_emit_str:
-        ctx.word_addr[EMIT_STR_BUILTIN] = len(ctx.code) * 4
+        ctx.word_addr[EMIT_STR_BUILTIN] = len(ctx.code)
         _emit_print_pstr_helper(ctx)
 
     for idx, name, tok in ctx.forward_refs:
@@ -422,7 +421,7 @@ def _generate_block(ctx: CodegenCtx, tokens: list[Token], *, is_word_body: bool)
                 raise CompileError(f"'else' без 'if' (строка {tok.line})")
             _, jz_idx = label_stack.pop()
             jmp_idx = ctx.emit(Opcode.JMP, 0, tok)
-            ctx.code[jz_idx].arg = len(ctx.code) * 4
+            ctx.code[jz_idx].arg = len(ctx.code)
             label_stack.append(("else", jmp_idx))
             i += 1
             continue
@@ -431,12 +430,12 @@ def _generate_block(ctx: CodegenCtx, tokens: list[Token], *, is_word_body: bool)
             if not label_stack or label_stack[-1][0] not in ("if", "else"):
                 raise CompileError(f"'then' без 'if' (строка {tok.line})")
             _, idx = label_stack.pop()
-            ctx.code[idx].arg = len(ctx.code) * 4
+            ctx.code[idx].arg = len(ctx.code)
             i += 1
             continue
 
         if w == "begin":
-            label_stack.append(("begin", len(ctx.code) * 4))
+            label_stack.append(("begin", len(ctx.code)))
             i += 1
             continue
 
@@ -459,7 +458,7 @@ def _generate_block(ctx: CodegenCtx, tokens: list[Token], *, is_word_body: bool)
             _, jz_idx = label_stack.pop()
             _, begin_addr = label_stack.pop()
             ctx.emit(Opcode.JMP, begin_addr, tok)
-            ctx.code[jz_idx].arg = len(ctx.code) * 4
+            ctx.code[jz_idx].arg = len(ctx.code)
             i += 1
             continue
 
@@ -503,10 +502,10 @@ def _emit_print_pstr_helper(ctx: CodegenCtx) -> None:
     e(Opcode.DUP)
     e(Opcode.LOAD)
     e(Opcode.SWAP)
-    e(Opcode.PUSH, 4)  # skip length word (4 bytes) to reach first char
+    e(Opcode.PUSH, 1)
     e(Opcode.ADD)
     e(Opcode.SWAP)
-    begin = len(ctx.code) * 4
+    begin = len(ctx.code)
     e(Opcode.DUP)
     e(Opcode.PUSH, 0)
     e(Opcode.GT)
@@ -515,13 +514,13 @@ def _emit_print_pstr_helper(ctx: CodegenCtx) -> None:
     e(Opcode.LOAD)
     e(Opcode.OUT, 1)
     e(Opcode.SWAP)
-    e(Opcode.PUSH, 4)  # advance to next char word (4 bytes)
+    e(Opcode.PUSH, 1)
     e(Opcode.ADD)
     e(Opcode.SWAP)
-    e(Opcode.PUSH, 1)  # decrement char counter
+    e(Opcode.PUSH, 1)
     e(Opcode.SUB)
     e(Opcode.JMP, begin)
-    ctx.code[jz_idx].arg = len(ctx.code) * 4
+    ctx.code[jz_idx].arg = len(ctx.code)
     e(Opcode.DROP)
     e(Opcode.DROP)
     e(Opcode.RET)

@@ -41,13 +41,13 @@ class DsOp(IntEnum):
 
 class RsOp(IntEnum):
     NOP = 0
-    PUSH_PC_PLUS_4 = 1
+    PUSH_PC_PLUS_1 = 1
     POP = 2
 
 
 class SelPc(IntEnum):
     KEEP = 0
-    PLUS4 = 1
+    INC = 1
     TODS = 2
     TORS = 3
 
@@ -82,7 +82,6 @@ class MicroInstr:
         sel_mpc=SelMpc.FETCH,
         rs_op=RsOp.NOP,
         latch_ir=False,
-        halt=False,
     ):
         self.label = label
         self.alu_op = alu_op
@@ -100,7 +99,6 @@ class MicroInstr:
         self.sel_mpc = sel_mpc
         self.rs_op = rs_op
         self.latch_ir = latch_ir
-        self.halt = halt
 
 
 MICRO_PROGRAM = (
@@ -116,35 +114,35 @@ MICRO_PROGRAM = (
         sel_tos=SelTodsIn.IMM,
         latch_tods=True,
         ds_op=DsOp.PUSH,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 2 — DUP
     MicroInstr(
         label="EXEC_DUP",
         ds_op=DsOp.DUP,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 3 — DROP
     MicroInstr(
         label="EXEC_DROP",
         ds_op=DsOp.DROP,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 4 — SWAP
     MicroInstr(
         label="EXEC_SWAP",
         ds_op=DsOp.SWAP,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 5 — OVER
     MicroInstr(
         label="EXEC_OVER",
         ds_op=DsOp.OVER,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 6 — ADD
@@ -152,7 +150,7 @@ MICRO_PROGRAM = (
         label="EXEC_ADD",
         alu_op=AluOp.ADD,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 7 — SUB
@@ -160,7 +158,7 @@ MICRO_PROGRAM = (
         label="EXEC_SUB",
         alu_op=AluOp.SUB,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 8 — MUL
@@ -168,7 +166,7 @@ MICRO_PROGRAM = (
         label="EXEC_MUL",
         alu_op=AluOp.MUL,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 9 — DIV
@@ -176,7 +174,7 @@ MICRO_PROGRAM = (
         label="EXEC_DIV",
         alu_op=AluOp.DIV,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 10 — MOD
@@ -184,7 +182,7 @@ MICRO_PROGRAM = (
         label="EXEC_MOD",
         alu_op=AluOp.MOD,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 11 — EQ
@@ -192,7 +190,7 @@ MICRO_PROGRAM = (
         label="EXEC_EQ",
         alu_op=AluOp.EQ,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 12 — LT
@@ -200,7 +198,7 @@ MICRO_PROGRAM = (
         label="EXEC_LT",
         alu_op=AluOp.LT,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 13 — GT
@@ -208,7 +206,7 @@ MICRO_PROGRAM = (
         label="EXEC_GT",
         alu_op=AluOp.GT,
         ds_op=DsOp.ALU_TO_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 14 — LOAD
@@ -218,7 +216,7 @@ MICRO_PROGRAM = (
         latch_tods=True,
         mem_read=True,
         ds_op=DsOp.LATCH_TODS,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 15 — STORE
@@ -226,7 +224,7 @@ MICRO_PROGRAM = (
         label="EXEC_STORE",
         mem_write=True,
         ds_op=DsOp.DROP2,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 16 — JMP imm
@@ -247,7 +245,7 @@ MICRO_PROGRAM = (
     # 18 — CALL imm
     MicroInstr(
         label="EXEC_CALL",
-        rs_op=RsOp.PUSH_PC_PLUS_4,
+        rs_op=RsOp.PUSH_PC_PLUS_1,
         jump_type=JumpType.UNCOND,
         sel_mpc=SelMpc.FETCH,
     ),
@@ -261,7 +259,7 @@ MICRO_PROGRAM = (
     # 20 — EXECUTE
     MicroInstr(
         label="EXEC_EXECUTE",
-        rs_op=RsOp.PUSH_PC_PLUS_4,
+        rs_op=RsOp.PUSH_PC_PLUS_1,
         sel_pc=SelPc.TODS,
         ds_op=DsOp.DROP,
         sel_mpc=SelMpc.FETCH,
@@ -273,7 +271,7 @@ MICRO_PROGRAM = (
         latch_tods=True,
         io_read=True,
         ds_op=DsOp.PUSH,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
     # 22 — OUT port
@@ -281,22 +279,17 @@ MICRO_PROGRAM = (
         label="EXEC_OUT",
         io_write=True,
         ds_op=DsOp.DROP,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
-    # 23 — HALT
-    MicroInstr(
-        label="EXEC_HALT",
-        halt=True,
-    ),
-    # 24 — CARRY
+    # 23 — CARRY
     MicroInstr(
         label="EXEC_CARRY",
         sel_tos=SelTodsIn.ALU,
         sel_carry=True,
         latch_tods=True,
         ds_op=DsOp.PUSH,
-        sel_pc=SelPc.PLUS4,
+        sel_pc=SelPc.INC,
         sel_mpc=SelMpc.FETCH,
     ),
 )
@@ -325,6 +318,5 @@ DISPATCH = {
     Opcode.EXECUTE: 20,
     Opcode.IN: 21,
     Opcode.OUT: 22,
-    Opcode.HALT: 23,
-    Opcode.CARRY: 24,
+    Opcode.CARRY: 23,
 }

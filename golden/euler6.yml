@@ -11,7 +11,7 @@ in_source: |
       repeat
       drop
   ;
-
+  
   : sum-to-n
       0 swap
       begin
@@ -22,7 +22,7 @@ in_source: |
       repeat
       drop
   ;
-
+  
   : sum-of-squares
       0 swap
       begin
@@ -36,7 +36,7 @@ in_source: |
       repeat
       drop
   ;
-
+  
   : print-int
       dup 0 =
       if
@@ -53,7 +53,7 @@ in_source: |
           48 + 1 out
       then
   ;
-
+  
   : print-line
       dup 0 =
       if
@@ -63,7 +63,7 @@ in_source: |
       then
       10 1 out
   ;
-
+  
   : main
       read-int
       dup sum-to-n
@@ -72,813 +72,812 @@ in_source: |
       -
       print-line
   ;
-
+  
   main
 in_stdin: |
   100
-out_log: |
-  TICK=   1  mPC= 0(FETCH       )  PC=  0->0    IR=CALL 340    TOS=·          NOS=·          TORS=·     Z   ds=0 rs=0
-  TICK=   2  mPC=18(EXEC_CALL   )  PC=  0->340  IR=CALL 340    TOS=·          NOS=·          TORS=4     Z   ds=0 rs=1
-  TICK=   3  mPC= 0(FETCH       )  PC=340->340  IR=CALL 8      TOS=·          NOS=·          TORS=4     Z   ds=0 rs=1
-  TICK=   4  mPC=18(EXEC_CALL   )  PC=340->8    IR=CALL 8      TOS=·          NOS=·          TORS=344   Z   ds=0 rs=2
-  TICK=   5  mPC= 0(FETCH       )  PC=  8->8    IR=PUSH 0      TOS=·          NOS=·          TORS=344   Z   ds=0 rs=2
-  TICK=   6  mPC= 1(EXEC_PUSH   )  PC=  8->12   IR=PUSH 0      TOS=0          NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=   7  mPC= 0(FETCH       )  PC= 12->12   IR=IN 0        TOS=0          NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=   8  mPC=21(EXEC_IN     )  PC= 12->16   IR=IN 0        TOS=49('1')    NOS=0          TORS=344   Z   ds=2 rs=2  IN[0]=49('1')
-  TICK=   9  mPC= 0(FETCH       )  PC= 16->16   IR=DUP         TOS=49('1')    NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  10  mPC= 2(EXEC_DUP    )  PC= 16->20   IR=DUP         TOS=49('1')    NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  11  mPC= 0(FETCH       )  PC= 20->20   IR=PUSH 10     TOS=49('1')    NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  12  mPC= 1(EXEC_PUSH   )  PC= 20->24   IR=PUSH 10     TOS=10         NOS=49('1')    TORS=344   Z   ds=4 rs=2
-  TICK=  13  mPC= 0(FETCH       )  PC= 24->24   IR=EQ          TOS=10         NOS=49('1')    TORS=344   Z   ds=4 rs=2
-  TICK=  14  mPC=11(EXEC_EQ     )  PC= 24->28   IR=EQ          TOS=0          NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  15  mPC= 0(FETCH       )  PC= 28->28   IR=PUSH 0      TOS=0          NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  16  mPC= 1(EXEC_PUSH   )  PC= 28->32   IR=PUSH 0      TOS=0          NOS=0          TORS=344   Z   ds=4 rs=2
-  TICK=  17  mPC= 0(FETCH       )  PC= 32->32   IR=EQ          TOS=0          NOS=0          TORS=344   Z   ds=4 rs=2
-  TICK=  18  mPC=11(EXEC_EQ     )  PC= 32->36   IR=EQ          TOS=1          NOS=49('1')    TORS=344       ds=3 rs=2
-  TICK=  19  mPC= 0(FETCH       )  PC= 36->36   IR=JZ 68       TOS=1          NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  20  mPC=17(EXEC_JZ     )  PC= 36->40   IR=JZ 68       TOS=49('1')    NOS=0          TORS=344       ds=2 rs=2
-  TICK=  21  mPC= 0(FETCH       )  PC= 40->40   IR=PUSH 48     TOS=49('1')    NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  22  mPC= 1(EXEC_PUSH   )  PC= 40->44   IR=PUSH 48     TOS=48('0')    NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  23  mPC= 0(FETCH       )  PC= 44->44   IR=SUB         TOS=48('0')    NOS=49('1')    TORS=344   Z   ds=3 rs=2
-  TICK=  24  mPC= 7(EXEC_SUB    )  PC= 44->48   IR=SUB         TOS=1          NOS=0          TORS=344       ds=2 rs=2
-  TICK=  25  mPC= 0(FETCH       )  PC= 48->48   IR=SWAP        TOS=1          NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  26  mPC= 4(EXEC_SWAP   )  PC= 48->52   IR=SWAP        TOS=0          NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  27  mPC= 0(FETCH       )  PC= 52->52   IR=PUSH 10     TOS=0          NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  28  mPC= 1(EXEC_PUSH   )  PC= 52->56   IR=PUSH 10     TOS=10         NOS=0          TORS=344   Z   ds=3 rs=2
-  TICK=  29  mPC= 0(FETCH       )  PC= 56->56   IR=MUL         TOS=10         NOS=0          TORS=344   Z   ds=3 rs=2
-  TICK=  30  mPC= 8(EXEC_MUL    )  PC= 56->60   IR=MUL         TOS=0          NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  31  mPC= 0(FETCH       )  PC= 60->60   IR=ADD         TOS=0          NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  32  mPC= 6(EXEC_ADD    )  PC= 60->64   IR=ADD         TOS=1          NOS=·          TORS=344       ds=1 rs=2
-  TICK=  33  mPC= 0(FETCH       )  PC= 64->64   IR=JMP 12      TOS=1          NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  34  mPC=16(EXEC_JMP    )  PC= 64->12   IR=JMP 12      TOS=1          NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  35  mPC= 0(FETCH       )  PC= 12->12   IR=IN 0        TOS=1          NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  36  mPC=21(EXEC_IN     )  PC= 12->16   IR=IN 0        TOS=48('0')    NOS=1          TORS=344   Z   ds=2 rs=2  IN[0]=48('0')
-  TICK=  37  mPC= 0(FETCH       )  PC= 16->16   IR=DUP         TOS=48('0')    NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  38  mPC= 2(EXEC_DUP    )  PC= 16->20   IR=DUP         TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  39  mPC= 0(FETCH       )  PC= 20->20   IR=PUSH 10     TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  40  mPC= 1(EXEC_PUSH   )  PC= 20->24   IR=PUSH 10     TOS=10         NOS=48('0')    TORS=344   Z   ds=4 rs=2
-  TICK=  41  mPC= 0(FETCH       )  PC= 24->24   IR=EQ          TOS=10         NOS=48('0')    TORS=344   Z   ds=4 rs=2
-  TICK=  42  mPC=11(EXEC_EQ     )  PC= 24->28   IR=EQ          TOS=0          NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  43  mPC= 0(FETCH       )  PC= 28->28   IR=PUSH 0      TOS=0          NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  44  mPC= 1(EXEC_PUSH   )  PC= 28->32   IR=PUSH 0      TOS=0          NOS=0          TORS=344   Z   ds=4 rs=2
-  TICK=  45  mPC= 0(FETCH       )  PC= 32->32   IR=EQ          TOS=0          NOS=0          TORS=344   Z   ds=4 rs=2
-  TICK=  46  mPC=11(EXEC_EQ     )  PC= 32->36   IR=EQ          TOS=1          NOS=48('0')    TORS=344       ds=3 rs=2
-  TICK=  47  mPC= 0(FETCH       )  PC= 36->36   IR=JZ 68       TOS=1          NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  48  mPC=17(EXEC_JZ     )  PC= 36->40   IR=JZ 68       TOS=48('0')    NOS=1          TORS=344       ds=2 rs=2
-  TICK=  49  mPC= 0(FETCH       )  PC= 40->40   IR=PUSH 48     TOS=48('0')    NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  50  mPC= 1(EXEC_PUSH   )  PC= 40->44   IR=PUSH 48     TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  51  mPC= 0(FETCH       )  PC= 44->44   IR=SUB         TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  52  mPC= 7(EXEC_SUB    )  PC= 44->48   IR=SUB         TOS=0          NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  53  mPC= 0(FETCH       )  PC= 48->48   IR=SWAP        TOS=0          NOS=1          TORS=344   Z   ds=2 rs=2
-  TICK=  54  mPC= 4(EXEC_SWAP   )  PC= 48->52   IR=SWAP        TOS=1          NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  55  mPC= 0(FETCH       )  PC= 52->52   IR=PUSH 10     TOS=1          NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  56  mPC= 1(EXEC_PUSH   )  PC= 52->56   IR=PUSH 10     TOS=10         NOS=1          TORS=344   Z   ds=3 rs=2
-  TICK=  57  mPC= 0(FETCH       )  PC= 56->56   IR=MUL         TOS=10         NOS=1          TORS=344   Z   ds=3 rs=2
-  TICK=  58  mPC= 8(EXEC_MUL    )  PC= 56->60   IR=MUL         TOS=10         NOS=0          TORS=344       ds=2 rs=2
-  TICK=  59  mPC= 0(FETCH       )  PC= 60->60   IR=ADD         TOS=10         NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  60  mPC= 6(EXEC_ADD    )  PC= 60->64   IR=ADD         TOS=10         NOS=·          TORS=344       ds=1 rs=2
-  TICK=  61  mPC= 0(FETCH       )  PC= 64->64   IR=JMP 12      TOS=10         NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  62  mPC=16(EXEC_JMP    )  PC= 64->12   IR=JMP 12      TOS=10         NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  63  mPC= 0(FETCH       )  PC= 12->12   IR=IN 0        TOS=10         NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  64  mPC=21(EXEC_IN     )  PC= 12->16   IR=IN 0        TOS=48('0')    NOS=10         TORS=344   Z   ds=2 rs=2  IN[0]=48('0')
-  TICK=  65  mPC= 0(FETCH       )  PC= 16->16   IR=DUP         TOS=48('0')    NOS=10         TORS=344   Z   ds=2 rs=2
-  TICK=  66  mPC= 2(EXEC_DUP    )  PC= 16->20   IR=DUP         TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  67  mPC= 0(FETCH       )  PC= 20->20   IR=PUSH 10     TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  68  mPC= 1(EXEC_PUSH   )  PC= 20->24   IR=PUSH 10     TOS=10         NOS=48('0')    TORS=344   Z   ds=4 rs=2
-  TICK=  69  mPC= 0(FETCH       )  PC= 24->24   IR=EQ          TOS=10         NOS=48('0')    TORS=344   Z   ds=4 rs=2
-  TICK=  70  mPC=11(EXEC_EQ     )  PC= 24->28   IR=EQ          TOS=0          NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  71  mPC= 0(FETCH       )  PC= 28->28   IR=PUSH 0      TOS=0          NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  72  mPC= 1(EXEC_PUSH   )  PC= 28->32   IR=PUSH 0      TOS=0          NOS=0          TORS=344   Z   ds=4 rs=2
-  TICK=  73  mPC= 0(FETCH       )  PC= 32->32   IR=EQ          TOS=0          NOS=0          TORS=344   Z   ds=4 rs=2
-  TICK=  74  mPC=11(EXEC_EQ     )  PC= 32->36   IR=EQ          TOS=1          NOS=48('0')    TORS=344       ds=3 rs=2
-  TICK=  75  mPC= 0(FETCH       )  PC= 36->36   IR=JZ 68       TOS=1          NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  76  mPC=17(EXEC_JZ     )  PC= 36->40   IR=JZ 68       TOS=48('0')    NOS=10         TORS=344       ds=2 rs=2
-  TICK=  77  mPC= 0(FETCH       )  PC= 40->40   IR=PUSH 48     TOS=48('0')    NOS=10         TORS=344   Z   ds=2 rs=2
-  TICK=  78  mPC= 1(EXEC_PUSH   )  PC= 40->44   IR=PUSH 48     TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  79  mPC= 0(FETCH       )  PC= 44->44   IR=SUB         TOS=48('0')    NOS=48('0')    TORS=344   Z   ds=3 rs=2
-  TICK=  80  mPC= 7(EXEC_SUB    )  PC= 44->48   IR=SUB         TOS=0          NOS=10         TORS=344   Z   ds=2 rs=2
-  TICK=  81  mPC= 0(FETCH       )  PC= 48->48   IR=SWAP        TOS=0          NOS=10         TORS=344   Z   ds=2 rs=2
-  TICK=  82  mPC= 4(EXEC_SWAP   )  PC= 48->52   IR=SWAP        TOS=10         NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  83  mPC= 0(FETCH       )  PC= 52->52   IR=PUSH 10     TOS=10         NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  84  mPC= 1(EXEC_PUSH   )  PC= 52->56   IR=PUSH 10     TOS=10         NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK=  85  mPC= 0(FETCH       )  PC= 56->56   IR=MUL         TOS=10         NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK=  86  mPC= 8(EXEC_MUL    )  PC= 56->60   IR=MUL         TOS=100('d')   NOS=0          TORS=344       ds=2 rs=2
-  TICK=  87  mPC= 0(FETCH       )  PC= 60->60   IR=ADD         TOS=100('d')   NOS=0          TORS=344   Z   ds=2 rs=2
-  TICK=  88  mPC= 6(EXEC_ADD    )  PC= 60->64   IR=ADD         TOS=100('d')   NOS=·          TORS=344       ds=1 rs=2
-  TICK=  89  mPC= 0(FETCH       )  PC= 64->64   IR=JMP 12      TOS=100('d')   NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  90  mPC=16(EXEC_JMP    )  PC= 64->12   IR=JMP 12      TOS=100('d')   NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  91  mPC= 0(FETCH       )  PC= 12->12   IR=IN 0        TOS=100('d')   NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK=  92  mPC=21(EXEC_IN     )  PC= 12->16   IR=IN 0        TOS=10         NOS=100('d')   TORS=344   Z   ds=2 rs=2  IN[0]=10
-  TICK=  93  mPC= 0(FETCH       )  PC= 16->16   IR=DUP         TOS=10         NOS=100('d')   TORS=344   Z   ds=2 rs=2
-  TICK=  94  mPC= 2(EXEC_DUP    )  PC= 16->20   IR=DUP         TOS=10         NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK=  95  mPC= 0(FETCH       )  PC= 20->20   IR=PUSH 10     TOS=10         NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK=  96  mPC= 1(EXEC_PUSH   )  PC= 20->24   IR=PUSH 10     TOS=10         NOS=10         TORS=344   Z   ds=4 rs=2
-  TICK=  97  mPC= 0(FETCH       )  PC= 24->24   IR=EQ          TOS=10         NOS=10         TORS=344   Z   ds=4 rs=2
-  TICK=  98  mPC=11(EXEC_EQ     )  PC= 24->28   IR=EQ          TOS=1          NOS=10         TORS=344       ds=3 rs=2
-  TICK=  99  mPC= 0(FETCH       )  PC= 28->28   IR=PUSH 0      TOS=1          NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK= 100  mPC= 1(EXEC_PUSH   )  PC= 28->32   IR=PUSH 0      TOS=0          NOS=1          TORS=344   Z   ds=4 rs=2
-  TICK= 101  mPC= 0(FETCH       )  PC= 32->32   IR=EQ          TOS=0          NOS=1          TORS=344   Z   ds=4 rs=2
-  TICK= 102  mPC=11(EXEC_EQ     )  PC= 32->36   IR=EQ          TOS=0          NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK= 103  mPC= 0(FETCH       )  PC= 36->36   IR=JZ 68       TOS=0          NOS=10         TORS=344   Z   ds=3 rs=2
-  TICK= 104  mPC=17(EXEC_JZ     )  PC= 36->68   IR=JZ 68       TOS=10         NOS=100('d')   TORS=344   Z   ds=2 rs=2
-  TICK= 105  mPC= 0(FETCH       )  PC= 68->68   IR=DROP        TOS=10         NOS=100('d')   TORS=344   Z   ds=2 rs=2
-  TICK= 106  mPC= 3(EXEC_DROP   )  PC= 68->72   IR=DROP        TOS=100('d')   NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK= 107  mPC= 0(FETCH       )  PC= 72->72   IR=RET         TOS=100('d')   NOS=·          TORS=344   Z   ds=1 rs=2
-  TICK= 108  mPC=19(EXEC_RET    )  PC= 72->344  IR=RET         TOS=100('d')   NOS=·          TORS=4     Z   ds=1 rs=1
-  TICK= 109  mPC= 0(FETCH       )  PC=344->344  IR=DUP         TOS=100('d')   NOS=·          TORS=4     Z   ds=1 rs=1
-  TICK= 110  mPC= 2(EXEC_DUP    )  PC=344->348  IR=DUP         TOS=100('d')   NOS=100('d')   TORS=4     Z   ds=2 rs=1
-  TICK= 111  mPC= 0(FETCH       )  PC=348->348  IR=CALL 76     TOS=100('d')   NOS=100('d')   TORS=4     Z   ds=2 rs=1
-  TICK= 112  mPC=18(EXEC_CALL   )  PC=348->76   IR=CALL 76     TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=2 rs=2
-  TICK= 113  mPC= 0(FETCH       )  PC= 76->76   IR=PUSH 0      TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=2 rs=2
-  TICK= 114  mPC= 1(EXEC_PUSH   )  PC= 76->80   IR=PUSH 0      TOS=0          NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 115  mPC= 0(FETCH       )  PC= 80->80   IR=SWAP        TOS=0          NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 116  mPC= 4(EXEC_SWAP   )  PC= 80->84   IR=SWAP        TOS=100('d')   NOS=0          TORS=352   Z   ds=3 rs=2
-  TICK= 117  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=100('d')   NOS=0          TORS=352   Z   ds=3 rs=2
-  TICK= 118  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 119  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 120  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=100('d')   TORS=352   Z   ds=5 rs=2
-  TICK= 121  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=100('d')   TORS=352   Z   ds=5 rs=2
-  TICK= 122  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=100('d')   TORS=352       ds=4 rs=2
-  TICK= 123  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 124  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=100('d')   NOS=0          TORS=352       ds=3 rs=2
-  TICK= 125  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=100('d')   NOS=0          TORS=352   Z   ds=3 rs=2
-  TICK= 126  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=0          NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 127  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=0          NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 128  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=100('d')   NOS=0          TORS=352   Z   ds=4 rs=2
-  TICK= 129  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=100('d')   NOS=0          TORS=352   Z   ds=4 rs=2
-  TICK= 130  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=100('d')   NOS=100('d')   TORS=352       ds=3 rs=2
-  TICK= 131  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 132  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 133  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=100('d')   NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 134  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 135  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 136  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=99('c')    NOS=100('d')   TORS=352       ds=3 rs=2
-  TICK= 137  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=99('c')    NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 138  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=99('c')    NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 139  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=99('c')    NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 140  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=99('c')    NOS=99('c')    TORS=352   Z   ds=4 rs=2
-  TICK= 141  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=99('c')    NOS=99('c')    TORS=352   Z   ds=4 rs=2
-  TICK= 142  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=99('c')    TORS=352   Z   ds=5 rs=2
-  TICK= 143  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=99('c')    TORS=352   Z   ds=5 rs=2
-  TICK= 144  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=99('c')    TORS=352       ds=4 rs=2
-  TICK= 145  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=99('c')    TORS=352   Z   ds=4 rs=2
-  TICK= 146  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=99('c')    NOS=100('d')   TORS=352       ds=3 rs=2
-  TICK= 147  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=99('c')    NOS=100('d')   TORS=352   Z   ds=3 rs=2
-  TICK= 148  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=100('d')   NOS=99('c')    TORS=352   Z   ds=3 rs=2
-  TICK= 149  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=100('d')   NOS=99('c')    TORS=352   Z   ds=3 rs=2
-  TICK= 150  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=99('c')    NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 151  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=99('c')    NOS=100('d')   TORS=352   Z   ds=4 rs=2
-  TICK= 152  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=199        NOS=99('c')    TORS=352       ds=3 rs=2
-  TICK= 153  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=199        NOS=99('c')    TORS=352   Z   ds=3 rs=2
-  TICK= 154  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=99('c')    NOS=199        TORS=352   Z   ds=3 rs=2
-  TICK= 155  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=99('c')    NOS=199        TORS=352   Z   ds=3 rs=2
-  TICK= 156  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=99('c')    TORS=352   Z   ds=4 rs=2
-  TICK= 157  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=99('c')    TORS=352   Z   ds=4 rs=2
-  TICK= 158  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=98('b')    NOS=199        TORS=352       ds=3 rs=2
-  TICK= 159  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=98('b')    NOS=199        TORS=352   Z   ds=3 rs=2
-  TICK= 160  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=98('b')    NOS=199        TORS=352   Z   ds=3 rs=2
-  TICK= 161  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=98('b')    NOS=199        TORS=352   Z   ds=3 rs=2
-  TICK= 162  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=98('b')    NOS=98('b')    TORS=352   Z   ds=4 rs=2
-  TICK= 163  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=98('b')    NOS=98('b')    TORS=352   Z   ds=4 rs=2
-  TICK= 164  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=98('b')    TORS=352   Z   ds=5 rs=2
-  TICK= 165  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=98('b')    TORS=352   Z   ds=5 rs=2
-  TICK= 166  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=98('b')    TORS=352       ds=4 rs=2
-  TICK= 167  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=98('b')    TORS=352   Z   ds=4 rs=2
-  TICK= 168  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=98('b')    NOS=199        TORS=352       ds=3 rs=2
-  TICK= 169  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=98('b')    NOS=199        TORS=352   Z   ds=3 rs=2
-  TICK= 170  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=199        NOS=98('b')    TORS=352   Z   ds=3 rs=2
-  TICK= 171  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=199        NOS=98('b')    TORS=352   Z   ds=3 rs=2
-  TICK= 172  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=98('b')    NOS=199        TORS=352   Z   ds=4 rs=2
-  TICK= 173  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=98('b')    NOS=199        TORS=352   Z   ds=4 rs=2
-  TICK= 174  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=297        NOS=98('b')    TORS=352       ds=3 rs=2
-  TICK= 175  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=297        NOS=98('b')    TORS=352   Z   ds=3 rs=2
-  TICK= 176  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=98('b')    NOS=297        TORS=352   Z   ds=3 rs=2
-  TICK= 177  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=98('b')    NOS=297        TORS=352   Z   ds=3 rs=2
-  TICK= 178  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=98('b')    TORS=352   Z   ds=4 rs=2
-  TICK= 179  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=98('b')    TORS=352   Z   ds=4 rs=2
-  TICK= 180  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=97('a')    NOS=297        TORS=352       ds=3 rs=2
-  TICK= 181  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=97('a')    NOS=297        TORS=352   Z   ds=3 rs=2
-  TICK= 182  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=97('a')    NOS=297        TORS=352   Z   ds=3 rs=2
-  TICK= 183  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=97('a')    NOS=297        TORS=352   Z   ds=3 rs=2
-  TICK= 184  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=97('a')    NOS=97('a')    TORS=352   Z   ds=4 rs=2
-  TICK= 185  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=97('a')    NOS=97('a')    TORS=352   Z   ds=4 rs=2
-  TICK= 186  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=97('a')    TORS=352   Z   ds=5 rs=2
-  TICK= 187  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=97('a')    TORS=352   Z   ds=5 rs=2
-  TICK= 188  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=97('a')    TORS=352       ds=4 rs=2
-  TICK= 189  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=97('a')    TORS=352   Z   ds=4 rs=2
-  TICK= 190  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=97('a')    NOS=297        TORS=352       ds=3 rs=2
-  TICK= 191  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=97('a')    NOS=297        TORS=352   Z   ds=3 rs=2
-  TICK= 192  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=297        NOS=97('a')    TORS=352   Z   ds=3 rs=2
-  TICK= 193  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=297        NOS=97('a')    TORS=352   Z   ds=3 rs=2
-  TICK= 194  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=97('a')    NOS=297        TORS=352   Z   ds=4 rs=2
-  TICK= 195  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=97('a')    NOS=297        TORS=352   Z   ds=4 rs=2
-  TICK= 196  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=394        NOS=97('a')    TORS=352       ds=3 rs=2
-  TICK= 197  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=394        NOS=97('a')    TORS=352   Z   ds=3 rs=2
-  TICK= 198  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=97('a')    NOS=394        TORS=352   Z   ds=3 rs=2
-  TICK= 199  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=97('a')    NOS=394        TORS=352   Z   ds=3 rs=2
-  TICK= 200  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=97('a')    TORS=352   Z   ds=4 rs=2
-  TICK= 201  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=97('a')    TORS=352   Z   ds=4 rs=2
-  TICK= 202  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=96('`')    NOS=394        TORS=352       ds=3 rs=2
-  TICK= 203  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=96('`')    NOS=394        TORS=352   Z   ds=3 rs=2
-  TICK= 204  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=96('`')    NOS=394        TORS=352   Z   ds=3 rs=2
-  TICK= 205  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=96('`')    NOS=394        TORS=352   Z   ds=3 rs=2
-  TICK= 206  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=96('`')    NOS=96('`')    TORS=352   Z   ds=4 rs=2
-  TICK= 207  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=96('`')    NOS=96('`')    TORS=352   Z   ds=4 rs=2
-  TICK= 208  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=96('`')    TORS=352   Z   ds=5 rs=2
-  TICK= 209  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=96('`')    TORS=352   Z   ds=5 rs=2
-  TICK= 210  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=96('`')    TORS=352       ds=4 rs=2
-  TICK= 211  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=96('`')    TORS=352   Z   ds=4 rs=2
-  TICK= 212  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=96('`')    NOS=394        TORS=352       ds=3 rs=2
-  TICK= 213  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=96('`')    NOS=394        TORS=352   Z   ds=3 rs=2
-  TICK= 214  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=394        NOS=96('`')    TORS=352   Z   ds=3 rs=2
-  TICK= 215  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=394        NOS=96('`')    TORS=352   Z   ds=3 rs=2
-  TICK= 216  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=96('`')    NOS=394        TORS=352   Z   ds=4 rs=2
-  TICK= 217  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=96('`')    NOS=394        TORS=352   Z   ds=4 rs=2
-  TICK= 218  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=490        NOS=96('`')    TORS=352       ds=3 rs=2
-  TICK= 219  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=490        NOS=96('`')    TORS=352   Z   ds=3 rs=2
-  TICK= 220  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=96('`')    NOS=490        TORS=352   Z   ds=3 rs=2
-  TICK= 221  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=96('`')    NOS=490        TORS=352   Z   ds=3 rs=2
-  TICK= 222  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=96('`')    TORS=352   Z   ds=4 rs=2
-  TICK= 223  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=96('`')    TORS=352   Z   ds=4 rs=2
-  TICK= 224  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=95('_')    NOS=490        TORS=352       ds=3 rs=2
-  TICK= 225  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=95('_')    NOS=490        TORS=352   Z   ds=3 rs=2
-  TICK= 226  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=95('_')    NOS=490        TORS=352   Z   ds=3 rs=2
-  TICK= 227  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=95('_')    NOS=490        TORS=352   Z   ds=3 rs=2
-  TICK= 228  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=95('_')    NOS=95('_')    TORS=352   Z   ds=4 rs=2
-  TICK= 229  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=95('_')    NOS=95('_')    TORS=352   Z   ds=4 rs=2
-  TICK= 230  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=95('_')    TORS=352   Z   ds=5 rs=2
-  TICK= 231  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=95('_')    TORS=352   Z   ds=5 rs=2
-  TICK= 232  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=95('_')    TORS=352       ds=4 rs=2
-  TICK= 233  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=95('_')    TORS=352   Z   ds=4 rs=2
-  TICK= 234  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=95('_')    NOS=490        TORS=352       ds=3 rs=2
-  TICK= 235  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=95('_')    NOS=490        TORS=352   Z   ds=3 rs=2
-  TICK= 236  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=490        NOS=95('_')    TORS=352   Z   ds=3 rs=2
-  TICK= 237  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=490        NOS=95('_')    TORS=352   Z   ds=3 rs=2
-  TICK= 238  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=95('_')    NOS=490        TORS=352   Z   ds=4 rs=2
-  TICK= 239  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=95('_')    NOS=490        TORS=352   Z   ds=4 rs=2
-  TICK= 240  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=585        NOS=95('_')    TORS=352       ds=3 rs=2
-  TICK= 241  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=585        NOS=95('_')    TORS=352   Z   ds=3 rs=2
-  TICK= 242  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=95('_')    NOS=585        TORS=352   Z   ds=3 rs=2
-  TICK= 243  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=95('_')    NOS=585        TORS=352   Z   ds=3 rs=2
-  TICK= 244  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=95('_')    TORS=352   Z   ds=4 rs=2
-  TICK= 245  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=95('_')    TORS=352   Z   ds=4 rs=2
-  TICK= 246  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=94('^')    NOS=585        TORS=352       ds=3 rs=2
-  TICK= 247  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=94('^')    NOS=585        TORS=352   Z   ds=3 rs=2
-  TICK= 248  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=94('^')    NOS=585        TORS=352   Z   ds=3 rs=2
-  TICK= 249  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=94('^')    NOS=585        TORS=352   Z   ds=3 rs=2
-  TICK= 250  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=94('^')    NOS=94('^')    TORS=352   Z   ds=4 rs=2
-  TICK= 251  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=94('^')    NOS=94('^')    TORS=352   Z   ds=4 rs=2
-  TICK= 252  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=94('^')    TORS=352   Z   ds=5 rs=2
-  TICK= 253  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=94('^')    TORS=352   Z   ds=5 rs=2
-  TICK= 254  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=94('^')    TORS=352       ds=4 rs=2
-  TICK= 255  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=94('^')    TORS=352   Z   ds=4 rs=2
-  TICK= 256  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=94('^')    NOS=585        TORS=352       ds=3 rs=2
-  TICK= 257  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=94('^')    NOS=585        TORS=352   Z   ds=3 rs=2
-  TICK= 258  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=585        NOS=94('^')    TORS=352   Z   ds=3 rs=2
-  TICK= 259  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=585        NOS=94('^')    TORS=352   Z   ds=3 rs=2
-  TICK= 260  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=94('^')    NOS=585        TORS=352   Z   ds=4 rs=2
-  TICK= 261  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=94('^')    NOS=585        TORS=352   Z   ds=4 rs=2
-  TICK= 262  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=679        NOS=94('^')    TORS=352       ds=3 rs=2
-  TICK= 263  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=679        NOS=94('^')    TORS=352   Z   ds=3 rs=2
-  TICK= 264  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=94('^')    NOS=679        TORS=352   Z   ds=3 rs=2
-  TICK= 265  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=94('^')    NOS=679        TORS=352   Z   ds=3 rs=2
-  TICK= 266  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=94('^')    TORS=352   Z   ds=4 rs=2
-  TICK= 267  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=94('^')    TORS=352   Z   ds=4 rs=2
-  TICK= 268  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=93(']')    NOS=679        TORS=352       ds=3 rs=2
-  TICK= 269  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=93(']')    NOS=679        TORS=352   Z   ds=3 rs=2
-  TICK= 270  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=93(']')    NOS=679        TORS=352   Z   ds=3 rs=2
-  TICK= 271  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=93(']')    NOS=679        TORS=352   Z   ds=3 rs=2
-  TICK= 272  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=93(']')    NOS=93(']')    TORS=352   Z   ds=4 rs=2
-  TICK= 273  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=93(']')    NOS=93(']')    TORS=352   Z   ds=4 rs=2
-  TICK= 274  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=93(']')    TORS=352   Z   ds=5 rs=2
-  TICK= 275  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=93(']')    TORS=352   Z   ds=5 rs=2
-  TICK= 276  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=93(']')    TORS=352       ds=4 rs=2
-  TICK= 277  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=93(']')    TORS=352   Z   ds=4 rs=2
-  TICK= 278  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=93(']')    NOS=679        TORS=352       ds=3 rs=2
-  TICK= 279  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=93(']')    NOS=679        TORS=352   Z   ds=3 rs=2
-  TICK= 280  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=679        NOS=93(']')    TORS=352   Z   ds=3 rs=2
-  TICK= 281  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=679        NOS=93(']')    TORS=352   Z   ds=3 rs=2
-  TICK= 282  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=93(']')    NOS=679        TORS=352   Z   ds=4 rs=2
-  TICK= 283  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=93(']')    NOS=679        TORS=352   Z   ds=4 rs=2
-  TICK= 284  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=772        NOS=93(']')    TORS=352       ds=3 rs=2
-  TICK= 285  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=772        NOS=93(']')    TORS=352   Z   ds=3 rs=2
-  TICK= 286  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=93(']')    NOS=772        TORS=352   Z   ds=3 rs=2
-  TICK= 287  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=93(']')    NOS=772        TORS=352   Z   ds=3 rs=2
-  TICK= 288  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=93(']')    TORS=352   Z   ds=4 rs=2
-  TICK= 289  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=93(']')    TORS=352   Z   ds=4 rs=2
-  TICK= 290  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=92('\\')   NOS=772        TORS=352       ds=3 rs=2
-  TICK= 291  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=92('\\')   NOS=772        TORS=352   Z   ds=3 rs=2
-  TICK= 292  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=92('\\')   NOS=772        TORS=352   Z   ds=3 rs=2
-  TICK= 293  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=92('\\')   NOS=772        TORS=352   Z   ds=3 rs=2
-  TICK= 294  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=92('\\')   NOS=92('\\')   TORS=352   Z   ds=4 rs=2
-  TICK= 295  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=92('\\')   NOS=92('\\')   TORS=352   Z   ds=4 rs=2
-  TICK= 296  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=92('\\')   TORS=352   Z   ds=5 rs=2
-  TICK= 297  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=92('\\')   TORS=352   Z   ds=5 rs=2
-  TICK= 298  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=92('\\')   TORS=352       ds=4 rs=2
-  TICK= 299  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=92('\\')   TORS=352   Z   ds=4 rs=2
-  TICK= 300  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=92('\\')   NOS=772        TORS=352       ds=3 rs=2
-  TICK= 301  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=92('\\')   NOS=772        TORS=352   Z   ds=3 rs=2
-  TICK= 302  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=772        NOS=92('\\')   TORS=352   Z   ds=3 rs=2
-  TICK= 303  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=772        NOS=92('\\')   TORS=352   Z   ds=3 rs=2
-  TICK= 304  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=92('\\')   NOS=772        TORS=352   Z   ds=4 rs=2
-  TICK= 305  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=92('\\')   NOS=772        TORS=352   Z   ds=4 rs=2
-  TICK= 306  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=864        NOS=92('\\')   TORS=352       ds=3 rs=2
-  TICK= 307  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=864        NOS=92('\\')   TORS=352   Z   ds=3 rs=2
-  TICK= 308  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=92('\\')   NOS=864        TORS=352   Z   ds=3 rs=2
-  TICK= 309  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=92('\\')   NOS=864        TORS=352   Z   ds=3 rs=2
-  TICK= 310  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=92('\\')   TORS=352   Z   ds=4 rs=2
-  TICK= 311  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=92('\\')   TORS=352   Z   ds=4 rs=2
-  TICK= 312  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=91('[')    NOS=864        TORS=352       ds=3 rs=2
-  TICK= 313  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=91('[')    NOS=864        TORS=352   Z   ds=3 rs=2
-  TICK= 314  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=91('[')    NOS=864        TORS=352   Z   ds=3 rs=2
-  TICK= 315  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=91('[')    NOS=864        TORS=352   Z   ds=3 rs=2
-  TICK= 316  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=91('[')    NOS=91('[')    TORS=352   Z   ds=4 rs=2
-  TICK= 317  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=91('[')    NOS=91('[')    TORS=352   Z   ds=4 rs=2
-  TICK= 318  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=91('[')    TORS=352   Z   ds=5 rs=2
-  TICK= 319  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=91('[')    TORS=352   Z   ds=5 rs=2
-  TICK= 320  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=91('[')    TORS=352       ds=4 rs=2
-  TICK= 321  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=91('[')    TORS=352   Z   ds=4 rs=2
-  TICK= 322  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=91('[')    NOS=864        TORS=352       ds=3 rs=2
-  TICK= 323  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=91('[')    NOS=864        TORS=352   Z   ds=3 rs=2
-  TICK= 324  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=864        NOS=91('[')    TORS=352   Z   ds=3 rs=2
-  TICK= 325  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=864        NOS=91('[')    TORS=352   Z   ds=3 rs=2
-  TICK= 326  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=91('[')    NOS=864        TORS=352   Z   ds=4 rs=2
-  TICK= 327  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=91('[')    NOS=864        TORS=352   Z   ds=4 rs=2
-  TICK= 328  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=955        NOS=91('[')    TORS=352       ds=3 rs=2
-  TICK= 329  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=955        NOS=91('[')    TORS=352   Z   ds=3 rs=2
-  TICK= 330  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=91('[')    NOS=955        TORS=352   Z   ds=3 rs=2
-  TICK= 331  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=91('[')    NOS=955        TORS=352   Z   ds=3 rs=2
-  TICK= 332  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=91('[')    TORS=352   Z   ds=4 rs=2
-  TICK= 333  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=91('[')    TORS=352   Z   ds=4 rs=2
-  TICK= 334  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=90('Z')    NOS=955        TORS=352       ds=3 rs=2
-  TICK= 335  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=90('Z')    NOS=955        TORS=352   Z   ds=3 rs=2
-  TICK= 336  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=90('Z')    NOS=955        TORS=352   Z   ds=3 rs=2
-  TICK= 337  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=90('Z')    NOS=955        TORS=352   Z   ds=3 rs=2
-  TICK= 338  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=90('Z')    NOS=90('Z')    TORS=352   Z   ds=4 rs=2
-  TICK= 339  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=90('Z')    NOS=90('Z')    TORS=352   Z   ds=4 rs=2
-  TICK= 340  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=90('Z')    TORS=352   Z   ds=5 rs=2
-  TICK= 341  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=90('Z')    TORS=352   Z   ds=5 rs=2
-  TICK= 342  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=90('Z')    TORS=352       ds=4 rs=2
-  TICK= 343  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=90('Z')    TORS=352   Z   ds=4 rs=2
-  TICK= 344  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=90('Z')    NOS=955        TORS=352       ds=3 rs=2
-  TICK= 345  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=90('Z')    NOS=955        TORS=352   Z   ds=3 rs=2
-  TICK= 346  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=955        NOS=90('Z')    TORS=352   Z   ds=3 rs=2
-  TICK= 347  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=955        NOS=90('Z')    TORS=352   Z   ds=3 rs=2
-  TICK= 348  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=90('Z')    NOS=955        TORS=352   Z   ds=4 rs=2
-  TICK= 349  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=90('Z')    NOS=955        TORS=352   Z   ds=4 rs=2
-  TICK= 350  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1045       NOS=90('Z')    TORS=352       ds=3 rs=2
-  TICK= 351  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1045       NOS=90('Z')    TORS=352   Z   ds=3 rs=2
-  TICK= 352  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=90('Z')    NOS=1045       TORS=352   Z   ds=3 rs=2
-  TICK= 353  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=90('Z')    NOS=1045       TORS=352   Z   ds=3 rs=2
-  TICK= 354  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=90('Z')    TORS=352   Z   ds=4 rs=2
-  TICK= 355  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=90('Z')    TORS=352   Z   ds=4 rs=2
-  TICK= 356  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=89('Y')    NOS=1045       TORS=352       ds=3 rs=2
-  TICK= 357  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=89('Y')    NOS=1045       TORS=352   Z   ds=3 rs=2
-  TICK= 358  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=89('Y')    NOS=1045       TORS=352   Z   ds=3 rs=2
-  TICK= 359  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=89('Y')    NOS=1045       TORS=352   Z   ds=3 rs=2
-  TICK= 360  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=89('Y')    NOS=89('Y')    TORS=352   Z   ds=4 rs=2
-  TICK= 361  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=89('Y')    NOS=89('Y')    TORS=352   Z   ds=4 rs=2
-  TICK= 362  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=89('Y')    TORS=352   Z   ds=5 rs=2
-  TICK= 363  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=89('Y')    TORS=352   Z   ds=5 rs=2
-  TICK= 364  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=89('Y')    TORS=352       ds=4 rs=2
-  TICK= 365  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=89('Y')    TORS=352   Z   ds=4 rs=2
-  TICK= 366  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=89('Y')    NOS=1045       TORS=352       ds=3 rs=2
-  TICK= 367  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=89('Y')    NOS=1045       TORS=352   Z   ds=3 rs=2
-  TICK= 368  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1045       NOS=89('Y')    TORS=352   Z   ds=3 rs=2
-  TICK= 369  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1045       NOS=89('Y')    TORS=352   Z   ds=3 rs=2
-  TICK= 370  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=89('Y')    NOS=1045       TORS=352   Z   ds=4 rs=2
-  TICK= 371  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=89('Y')    NOS=1045       TORS=352   Z   ds=4 rs=2
-  TICK= 372  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1134       NOS=89('Y')    TORS=352       ds=3 rs=2
-  TICK= 373  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1134       NOS=89('Y')    TORS=352   Z   ds=3 rs=2
-  TICK= 374  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=89('Y')    NOS=1134       TORS=352   Z   ds=3 rs=2
-  TICK= 375  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=89('Y')    NOS=1134       TORS=352   Z   ds=3 rs=2
-  TICK= 376  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=89('Y')    TORS=352   Z   ds=4 rs=2
-  TICK= 377  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=89('Y')    TORS=352   Z   ds=4 rs=2
-  TICK= 378  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=88('X')    NOS=1134       TORS=352       ds=3 rs=2
-  TICK= 379  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=88('X')    NOS=1134       TORS=352   Z   ds=3 rs=2
-  TICK= 380  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=88('X')    NOS=1134       TORS=352   Z   ds=3 rs=2
-  TICK= 381  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=88('X')    NOS=1134       TORS=352   Z   ds=3 rs=2
-  TICK= 382  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=88('X')    NOS=88('X')    TORS=352   Z   ds=4 rs=2
-  TICK= 383  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=88('X')    NOS=88('X')    TORS=352   Z   ds=4 rs=2
-  TICK= 384  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=88('X')    TORS=352   Z   ds=5 rs=2
-  TICK= 385  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=88('X')    TORS=352   Z   ds=5 rs=2
-  TICK= 386  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=88('X')    TORS=352       ds=4 rs=2
-  TICK= 387  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=88('X')    TORS=352   Z   ds=4 rs=2
-  TICK= 388  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=88('X')    NOS=1134       TORS=352       ds=3 rs=2
-  TICK= 389  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=88('X')    NOS=1134       TORS=352   Z   ds=3 rs=2
-  TICK= 390  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1134       NOS=88('X')    TORS=352   Z   ds=3 rs=2
-  TICK= 391  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1134       NOS=88('X')    TORS=352   Z   ds=3 rs=2
-  TICK= 392  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=88('X')    NOS=1134       TORS=352   Z   ds=4 rs=2
-  TICK= 393  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=88('X')    NOS=1134       TORS=352   Z   ds=4 rs=2
-  TICK= 394  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1222       NOS=88('X')    TORS=352       ds=3 rs=2
-  TICK= 395  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1222       NOS=88('X')    TORS=352   Z   ds=3 rs=2
-  TICK= 396  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=88('X')    NOS=1222       TORS=352   Z   ds=3 rs=2
-  TICK= 397  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=88('X')    NOS=1222       TORS=352   Z   ds=3 rs=2
-  TICK= 398  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=88('X')    TORS=352   Z   ds=4 rs=2
-  TICK= 399  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=88('X')    TORS=352   Z   ds=4 rs=2
-  TICK= 400  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=87('W')    NOS=1222       TORS=352       ds=3 rs=2
-  TICK= 401  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=87('W')    NOS=1222       TORS=352   Z   ds=3 rs=2
-  TICK= 402  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=87('W')    NOS=1222       TORS=352   Z   ds=3 rs=2
-  TICK= 403  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=87('W')    NOS=1222       TORS=352   Z   ds=3 rs=2
-  TICK= 404  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=87('W')    NOS=87('W')    TORS=352   Z   ds=4 rs=2
-  TICK= 405  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=87('W')    NOS=87('W')    TORS=352   Z   ds=4 rs=2
-  TICK= 406  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=87('W')    TORS=352   Z   ds=5 rs=2
-  TICK= 407  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=87('W')    TORS=352   Z   ds=5 rs=2
-  TICK= 408  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=87('W')    TORS=352       ds=4 rs=2
-  TICK= 409  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=87('W')    TORS=352   Z   ds=4 rs=2
-  TICK= 410  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=87('W')    NOS=1222       TORS=352       ds=3 rs=2
-  TICK= 411  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=87('W')    NOS=1222       TORS=352   Z   ds=3 rs=2
-  TICK= 412  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1222       NOS=87('W')    TORS=352   Z   ds=3 rs=2
-  TICK= 413  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1222       NOS=87('W')    TORS=352   Z   ds=3 rs=2
-  TICK= 414  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=87('W')    NOS=1222       TORS=352   Z   ds=4 rs=2
-  TICK= 415  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=87('W')    NOS=1222       TORS=352   Z   ds=4 rs=2
-  TICK= 416  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1309       NOS=87('W')    TORS=352       ds=3 rs=2
-  TICK= 417  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1309       NOS=87('W')    TORS=352   Z   ds=3 rs=2
-  TICK= 418  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=87('W')    NOS=1309       TORS=352   Z   ds=3 rs=2
-  TICK= 419  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=87('W')    NOS=1309       TORS=352   Z   ds=3 rs=2
-  TICK= 420  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=87('W')    TORS=352   Z   ds=4 rs=2
-  TICK= 421  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=87('W')    TORS=352   Z   ds=4 rs=2
-  TICK= 422  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=86('V')    NOS=1309       TORS=352       ds=3 rs=2
-  TICK= 423  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=86('V')    NOS=1309       TORS=352   Z   ds=3 rs=2
-  TICK= 424  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=86('V')    NOS=1309       TORS=352   Z   ds=3 rs=2
-  TICK= 425  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=86('V')    NOS=1309       TORS=352   Z   ds=3 rs=2
-  TICK= 426  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=86('V')    NOS=86('V')    TORS=352   Z   ds=4 rs=2
-  TICK= 427  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=86('V')    NOS=86('V')    TORS=352   Z   ds=4 rs=2
-  TICK= 428  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=86('V')    TORS=352   Z   ds=5 rs=2
-  TICK= 429  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=86('V')    TORS=352   Z   ds=5 rs=2
-  TICK= 430  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=86('V')    TORS=352       ds=4 rs=2
-  TICK= 431  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=86('V')    TORS=352   Z   ds=4 rs=2
-  TICK= 432  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=86('V')    NOS=1309       TORS=352       ds=3 rs=2
-  TICK= 433  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=86('V')    NOS=1309       TORS=352   Z   ds=3 rs=2
-  TICK= 434  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1309       NOS=86('V')    TORS=352   Z   ds=3 rs=2
-  TICK= 435  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1309       NOS=86('V')    TORS=352   Z   ds=3 rs=2
-  TICK= 436  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=86('V')    NOS=1309       TORS=352   Z   ds=4 rs=2
-  TICK= 437  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=86('V')    NOS=1309       TORS=352   Z   ds=4 rs=2
-  TICK= 438  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1395       NOS=86('V')    TORS=352       ds=3 rs=2
-  TICK= 439  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1395       NOS=86('V')    TORS=352   Z   ds=3 rs=2
-  TICK= 440  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=86('V')    NOS=1395       TORS=352   Z   ds=3 rs=2
-  TICK= 441  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=86('V')    NOS=1395       TORS=352   Z   ds=3 rs=2
-  TICK= 442  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=86('V')    TORS=352   Z   ds=4 rs=2
-  TICK= 443  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=86('V')    TORS=352   Z   ds=4 rs=2
-  TICK= 444  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=85('U')    NOS=1395       TORS=352       ds=3 rs=2
-  TICK= 445  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=85('U')    NOS=1395       TORS=352   Z   ds=3 rs=2
-  TICK= 446  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=85('U')    NOS=1395       TORS=352   Z   ds=3 rs=2
-  TICK= 447  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=85('U')    NOS=1395       TORS=352   Z   ds=3 rs=2
-  TICK= 448  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=85('U')    NOS=85('U')    TORS=352   Z   ds=4 rs=2
-  TICK= 449  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=85('U')    NOS=85('U')    TORS=352   Z   ds=4 rs=2
-  TICK= 450  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=85('U')    TORS=352   Z   ds=5 rs=2
-  TICK= 451  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=85('U')    TORS=352   Z   ds=5 rs=2
-  TICK= 452  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=85('U')    TORS=352       ds=4 rs=2
-  TICK= 453  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=85('U')    TORS=352   Z   ds=4 rs=2
-  TICK= 454  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=85('U')    NOS=1395       TORS=352       ds=3 rs=2
-  TICK= 455  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=85('U')    NOS=1395       TORS=352   Z   ds=3 rs=2
-  TICK= 456  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1395       NOS=85('U')    TORS=352   Z   ds=3 rs=2
-  TICK= 457  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1395       NOS=85('U')    TORS=352   Z   ds=3 rs=2
-  TICK= 458  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=85('U')    NOS=1395       TORS=352   Z   ds=4 rs=2
-  TICK= 459  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=85('U')    NOS=1395       TORS=352   Z   ds=4 rs=2
-  TICK= 460  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1480       NOS=85('U')    TORS=352       ds=3 rs=2
-  TICK= 461  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1480       NOS=85('U')    TORS=352   Z   ds=3 rs=2
-  TICK= 462  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=85('U')    NOS=1480       TORS=352   Z   ds=3 rs=2
-  TICK= 463  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=85('U')    NOS=1480       TORS=352   Z   ds=3 rs=2
-  TICK= 464  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=85('U')    TORS=352   Z   ds=4 rs=2
-  TICK= 465  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=85('U')    TORS=352   Z   ds=4 rs=2
-  TICK= 466  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=84('T')    NOS=1480       TORS=352       ds=3 rs=2
-  TICK= 467  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=84('T')    NOS=1480       TORS=352   Z   ds=3 rs=2
-  TICK= 468  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=84('T')    NOS=1480       TORS=352   Z   ds=3 rs=2
-  TICK= 469  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=84('T')    NOS=1480       TORS=352   Z   ds=3 rs=2
-  TICK= 470  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=84('T')    NOS=84('T')    TORS=352   Z   ds=4 rs=2
-  TICK= 471  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=84('T')    NOS=84('T')    TORS=352   Z   ds=4 rs=2
-  TICK= 472  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=84('T')    TORS=352   Z   ds=5 rs=2
-  TICK= 473  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=84('T')    TORS=352   Z   ds=5 rs=2
-  TICK= 474  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=84('T')    TORS=352       ds=4 rs=2
-  TICK= 475  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=84('T')    TORS=352   Z   ds=4 rs=2
-  TICK= 476  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=84('T')    NOS=1480       TORS=352       ds=3 rs=2
-  TICK= 477  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=84('T')    NOS=1480       TORS=352   Z   ds=3 rs=2
-  TICK= 478  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1480       NOS=84('T')    TORS=352   Z   ds=3 rs=2
-  TICK= 479  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1480       NOS=84('T')    TORS=352   Z   ds=3 rs=2
-  TICK= 480  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=84('T')    NOS=1480       TORS=352   Z   ds=4 rs=2
-  TICK= 481  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=84('T')    NOS=1480       TORS=352   Z   ds=4 rs=2
-  TICK= 482  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1564       NOS=84('T')    TORS=352       ds=3 rs=2
-  TICK= 483  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1564       NOS=84('T')    TORS=352   Z   ds=3 rs=2
-  TICK= 484  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=84('T')    NOS=1564       TORS=352   Z   ds=3 rs=2
-  TICK= 485  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=84('T')    NOS=1564       TORS=352   Z   ds=3 rs=2
-  TICK= 486  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=84('T')    TORS=352   Z   ds=4 rs=2
-  TICK= 487  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=84('T')    TORS=352   Z   ds=4 rs=2
-  TICK= 488  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=83('S')    NOS=1564       TORS=352       ds=3 rs=2
-  TICK= 489  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=83('S')    NOS=1564       TORS=352   Z   ds=3 rs=2
-  TICK= 490  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=83('S')    NOS=1564       TORS=352   Z   ds=3 rs=2
-  TICK= 491  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=83('S')    NOS=1564       TORS=352   Z   ds=3 rs=2
-  TICK= 492  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=83('S')    NOS=83('S')    TORS=352   Z   ds=4 rs=2
-  TICK= 493  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=83('S')    NOS=83('S')    TORS=352   Z   ds=4 rs=2
-  TICK= 494  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=83('S')    TORS=352   Z   ds=5 rs=2
-  TICK= 495  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=83('S')    TORS=352   Z   ds=5 rs=2
-  TICK= 496  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=83('S')    TORS=352       ds=4 rs=2
-  TICK= 497  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=83('S')    TORS=352   Z   ds=4 rs=2
-  TICK= 498  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=83('S')    NOS=1564       TORS=352       ds=3 rs=2
-  TICK= 499  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=83('S')    NOS=1564       TORS=352   Z   ds=3 rs=2
-  TICK= 500  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1564       NOS=83('S')    TORS=352   Z   ds=3 rs=2
-  TICK= 501  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1564       NOS=83('S')    TORS=352   Z   ds=3 rs=2
-  TICK= 502  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=83('S')    NOS=1564       TORS=352   Z   ds=4 rs=2
-  TICK= 503  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=83('S')    NOS=1564       TORS=352   Z   ds=4 rs=2
-  TICK= 504  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1647       NOS=83('S')    TORS=352       ds=3 rs=2
-  TICK= 505  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1647       NOS=83('S')    TORS=352   Z   ds=3 rs=2
-  TICK= 506  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=83('S')    NOS=1647       TORS=352   Z   ds=3 rs=2
-  TICK= 507  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=83('S')    NOS=1647       TORS=352   Z   ds=3 rs=2
-  TICK= 508  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=83('S')    TORS=352   Z   ds=4 rs=2
-  TICK= 509  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=83('S')    TORS=352   Z   ds=4 rs=2
-  TICK= 510  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=82('R')    NOS=1647       TORS=352       ds=3 rs=2
-  TICK= 511  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=82('R')    NOS=1647       TORS=352   Z   ds=3 rs=2
-  TICK= 512  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=82('R')    NOS=1647       TORS=352   Z   ds=3 rs=2
-  TICK= 513  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=82('R')    NOS=1647       TORS=352   Z   ds=3 rs=2
-  TICK= 514  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=82('R')    NOS=82('R')    TORS=352   Z   ds=4 rs=2
-  TICK= 515  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=82('R')    NOS=82('R')    TORS=352   Z   ds=4 rs=2
-  TICK= 516  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=82('R')    TORS=352   Z   ds=5 rs=2
-  TICK= 517  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=82('R')    TORS=352   Z   ds=5 rs=2
-  TICK= 518  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=82('R')    TORS=352       ds=4 rs=2
-  TICK= 519  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=82('R')    TORS=352   Z   ds=4 rs=2
-  TICK= 520  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=82('R')    NOS=1647       TORS=352       ds=3 rs=2
-  TICK= 521  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=82('R')    NOS=1647       TORS=352   Z   ds=3 rs=2
-  TICK= 522  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1647       NOS=82('R')    TORS=352   Z   ds=3 rs=2
-  TICK= 523  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1647       NOS=82('R')    TORS=352   Z   ds=3 rs=2
-  TICK= 524  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=82('R')    NOS=1647       TORS=352   Z   ds=4 rs=2
-  TICK= 525  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=82('R')    NOS=1647       TORS=352   Z   ds=4 rs=2
-  TICK= 526  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1729       NOS=82('R')    TORS=352       ds=3 rs=2
-  TICK= 527  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1729       NOS=82('R')    TORS=352   Z   ds=3 rs=2
-  TICK= 528  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=82('R')    NOS=1729       TORS=352   Z   ds=3 rs=2
-  TICK= 529  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=82('R')    NOS=1729       TORS=352   Z   ds=3 rs=2
-  TICK= 530  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=82('R')    TORS=352   Z   ds=4 rs=2
-  TICK= 531  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=82('R')    TORS=352   Z   ds=4 rs=2
-  TICK= 532  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=81('Q')    NOS=1729       TORS=352       ds=3 rs=2
-  TICK= 533  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=81('Q')    NOS=1729       TORS=352   Z   ds=3 rs=2
-  TICK= 534  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=81('Q')    NOS=1729       TORS=352   Z   ds=3 rs=2
-  TICK= 535  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=81('Q')    NOS=1729       TORS=352   Z   ds=3 rs=2
-  TICK= 536  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=81('Q')    NOS=81('Q')    TORS=352   Z   ds=4 rs=2
-  TICK= 537  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=81('Q')    NOS=81('Q')    TORS=352   Z   ds=4 rs=2
-  TICK= 538  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=81('Q')    TORS=352   Z   ds=5 rs=2
-  TICK= 539  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=81('Q')    TORS=352   Z   ds=5 rs=2
-  TICK= 540  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=81('Q')    TORS=352       ds=4 rs=2
-  TICK= 541  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=81('Q')    TORS=352   Z   ds=4 rs=2
-  TICK= 542  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=81('Q')    NOS=1729       TORS=352       ds=3 rs=2
-  TICK= 543  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=81('Q')    NOS=1729       TORS=352   Z   ds=3 rs=2
-  TICK= 544  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1729       NOS=81('Q')    TORS=352   Z   ds=3 rs=2
-  TICK= 545  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1729       NOS=81('Q')    TORS=352   Z   ds=3 rs=2
-  TICK= 546  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=81('Q')    NOS=1729       TORS=352   Z   ds=4 rs=2
-  TICK= 547  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=81('Q')    NOS=1729       TORS=352   Z   ds=4 rs=2
-  TICK= 548  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1810       NOS=81('Q')    TORS=352       ds=3 rs=2
-  TICK= 549  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1810       NOS=81('Q')    TORS=352   Z   ds=3 rs=2
-  TICK= 550  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=81('Q')    NOS=1810       TORS=352   Z   ds=3 rs=2
-  TICK= 551  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=81('Q')    NOS=1810       TORS=352   Z   ds=3 rs=2
-  TICK= 552  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=81('Q')    TORS=352   Z   ds=4 rs=2
-  TICK= 553  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=81('Q')    TORS=352   Z   ds=4 rs=2
-  TICK= 554  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=80('P')    NOS=1810       TORS=352       ds=3 rs=2
-  TICK= 555  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=80('P')    NOS=1810       TORS=352   Z   ds=3 rs=2
-  TICK= 556  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=80('P')    NOS=1810       TORS=352   Z   ds=3 rs=2
-  TICK= 557  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=80('P')    NOS=1810       TORS=352   Z   ds=3 rs=2
-  TICK= 558  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=80('P')    NOS=80('P')    TORS=352   Z   ds=4 rs=2
-  TICK= 559  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=80('P')    NOS=80('P')    TORS=352   Z   ds=4 rs=2
-  TICK= 560  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=80('P')    TORS=352   Z   ds=5 rs=2
-  TICK= 561  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=80('P')    TORS=352   Z   ds=5 rs=2
-  TICK= 562  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=80('P')    TORS=352       ds=4 rs=2
-  TICK= 563  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=80('P')    TORS=352   Z   ds=4 rs=2
-  TICK= 564  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=80('P')    NOS=1810       TORS=352       ds=3 rs=2
-  TICK= 565  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=80('P')    NOS=1810       TORS=352   Z   ds=3 rs=2
-  TICK= 566  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1810       NOS=80('P')    TORS=352   Z   ds=3 rs=2
-  TICK= 567  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1810       NOS=80('P')    TORS=352   Z   ds=3 rs=2
-  TICK= 568  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=80('P')    NOS=1810       TORS=352   Z   ds=4 rs=2
-  TICK= 569  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=80('P')    NOS=1810       TORS=352   Z   ds=4 rs=2
-  TICK= 570  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1890       NOS=80('P')    TORS=352       ds=3 rs=2
-  TICK= 571  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1890       NOS=80('P')    TORS=352   Z   ds=3 rs=2
-  TICK= 572  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=80('P')    NOS=1890       TORS=352   Z   ds=3 rs=2
-  TICK= 573  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=80('P')    NOS=1890       TORS=352   Z   ds=3 rs=2
-  TICK= 574  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=80('P')    TORS=352   Z   ds=4 rs=2
-  TICK= 575  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=80('P')    TORS=352   Z   ds=4 rs=2
-  TICK= 576  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=79('O')    NOS=1890       TORS=352       ds=3 rs=2
-  TICK= 577  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=79('O')    NOS=1890       TORS=352   Z   ds=3 rs=2
-  TICK= 578  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=79('O')    NOS=1890       TORS=352   Z   ds=3 rs=2
-  TICK= 579  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=79('O')    NOS=1890       TORS=352   Z   ds=3 rs=2
-  TICK= 580  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=79('O')    NOS=79('O')    TORS=352   Z   ds=4 rs=2
-  TICK= 581  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=79('O')    NOS=79('O')    TORS=352   Z   ds=4 rs=2
-  TICK= 582  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=79('O')    TORS=352   Z   ds=5 rs=2
-  TICK= 583  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=79('O')    TORS=352   Z   ds=5 rs=2
-  TICK= 584  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=79('O')    TORS=352       ds=4 rs=2
-  TICK= 585  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=79('O')    TORS=352   Z   ds=4 rs=2
-  TICK= 586  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=79('O')    NOS=1890       TORS=352       ds=3 rs=2
-  TICK= 587  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=79('O')    NOS=1890       TORS=352   Z   ds=3 rs=2
-  TICK= 588  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1890       NOS=79('O')    TORS=352   Z   ds=3 rs=2
-  TICK= 589  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1890       NOS=79('O')    TORS=352   Z   ds=3 rs=2
-  TICK= 590  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=79('O')    NOS=1890       TORS=352   Z   ds=4 rs=2
-  TICK= 591  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=79('O')    NOS=1890       TORS=352   Z   ds=4 rs=2
-  TICK= 592  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=1969       NOS=79('O')    TORS=352       ds=3 rs=2
-  TICK= 593  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=1969       NOS=79('O')    TORS=352   Z   ds=3 rs=2
-  TICK= 594  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=79('O')    NOS=1969       TORS=352   Z   ds=3 rs=2
-  TICK= 595  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=79('O')    NOS=1969       TORS=352   Z   ds=3 rs=2
-  TICK= 596  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=79('O')    TORS=352   Z   ds=4 rs=2
-  TICK= 597  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=79('O')    TORS=352   Z   ds=4 rs=2
-  TICK= 598  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=78('N')    NOS=1969       TORS=352       ds=3 rs=2
-  TICK= 599  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=78('N')    NOS=1969       TORS=352   Z   ds=3 rs=2
-  TICK= 600  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=78('N')    NOS=1969       TORS=352   Z   ds=3 rs=2
-  TICK= 601  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=78('N')    NOS=1969       TORS=352   Z   ds=3 rs=2
-  TICK= 602  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=78('N')    NOS=78('N')    TORS=352   Z   ds=4 rs=2
-  TICK= 603  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=78('N')    NOS=78('N')    TORS=352   Z   ds=4 rs=2
-  TICK= 604  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=78('N')    TORS=352   Z   ds=5 rs=2
-  TICK= 605  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=78('N')    TORS=352   Z   ds=5 rs=2
-  TICK= 606  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=78('N')    TORS=352       ds=4 rs=2
-  TICK= 607  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=78('N')    TORS=352   Z   ds=4 rs=2
-  TICK= 608  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=78('N')    NOS=1969       TORS=352       ds=3 rs=2
-  TICK= 609  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=78('N')    NOS=1969       TORS=352   Z   ds=3 rs=2
-  TICK= 610  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=1969       NOS=78('N')    TORS=352   Z   ds=3 rs=2
-  TICK= 611  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=1969       NOS=78('N')    TORS=352   Z   ds=3 rs=2
-  TICK= 612  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=78('N')    NOS=1969       TORS=352   Z   ds=4 rs=2
-  TICK= 613  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=78('N')    NOS=1969       TORS=352   Z   ds=4 rs=2
-  TICK= 614  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=2047       NOS=78('N')    TORS=352       ds=3 rs=2
-  TICK= 615  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=2047       NOS=78('N')    TORS=352   Z   ds=3 rs=2
-  TICK= 616  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=78('N')    NOS=2047       TORS=352   Z   ds=3 rs=2
-  TICK= 617  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=78('N')    NOS=2047       TORS=352   Z   ds=3 rs=2
-  TICK= 618  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=78('N')    TORS=352   Z   ds=4 rs=2
-  TICK= 619  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=78('N')    TORS=352   Z   ds=4 rs=2
-  TICK= 620  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=77('M')    NOS=2047       TORS=352       ds=3 rs=2
-  TICK= 621  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=77('M')    NOS=2047       TORS=352   Z   ds=3 rs=2
-  TICK= 622  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=77('M')    NOS=2047       TORS=352   Z   ds=3 rs=2
-  TICK= 623  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=77('M')    NOS=2047       TORS=352   Z   ds=3 rs=2
-  TICK= 624  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=77('M')    NOS=77('M')    TORS=352   Z   ds=4 rs=2
-  TICK= 625  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=77('M')    NOS=77('M')    TORS=352   Z   ds=4 rs=2
-  TICK= 626  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=77('M')    TORS=352   Z   ds=5 rs=2
-  TICK= 627  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=77('M')    TORS=352   Z   ds=5 rs=2
-  TICK= 628  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=77('M')    TORS=352       ds=4 rs=2
-  TICK= 629  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=77('M')    TORS=352   Z   ds=4 rs=2
-  TICK= 630  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=77('M')    NOS=2047       TORS=352       ds=3 rs=2
-  TICK= 631  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=77('M')    NOS=2047       TORS=352   Z   ds=3 rs=2
-  TICK= 632  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=2047       NOS=77('M')    TORS=352   Z   ds=3 rs=2
-  TICK= 633  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=2047       NOS=77('M')    TORS=352   Z   ds=3 rs=2
-  TICK= 634  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=77('M')    NOS=2047       TORS=352   Z   ds=4 rs=2
-  TICK= 635  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=77('M')    NOS=2047       TORS=352   Z   ds=4 rs=2
-  TICK= 636  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=2124       NOS=77('M')    TORS=352       ds=3 rs=2
-  TICK= 637  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=2124       NOS=77('M')    TORS=352   Z   ds=3 rs=2
-  TICK= 638  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=77('M')    NOS=2124       TORS=352   Z   ds=3 rs=2
-  TICK= 639  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=77('M')    NOS=2124       TORS=352   Z   ds=3 rs=2
-  TICK= 640  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=77('M')    TORS=352   Z   ds=4 rs=2
-  TICK= 641  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=77('M')    TORS=352   Z   ds=4 rs=2
-  TICK= 642  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=76('L')    NOS=2124       TORS=352       ds=3 rs=2
-  TICK= 643  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=76('L')    NOS=2124       TORS=352   Z   ds=3 rs=2
-  TICK= 644  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=76('L')    NOS=2124       TORS=352   Z   ds=3 rs=2
-  TICK= 645  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=76('L')    NOS=2124       TORS=352   Z   ds=3 rs=2
-  TICK= 646  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=76('L')    NOS=76('L')    TORS=352   Z   ds=4 rs=2
-  TICK= 647  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=76('L')    NOS=76('L')    TORS=352   Z   ds=4 rs=2
-  TICK= 648  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=76('L')    TORS=352   Z   ds=5 rs=2
-  TICK= 649  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=76('L')    TORS=352   Z   ds=5 rs=2
-  TICK= 650  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=76('L')    TORS=352       ds=4 rs=2
-  TICK= 651  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=76('L')    TORS=352   Z   ds=4 rs=2
-  TICK= 652  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=76('L')    NOS=2124       TORS=352       ds=3 rs=2
-  TICK= 653  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=76('L')    NOS=2124       TORS=352   Z   ds=3 rs=2
-  TICK= 654  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=2124       NOS=76('L')    TORS=352   Z   ds=3 rs=2
-  TICK= 655  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=2124       NOS=76('L')    TORS=352   Z   ds=3 rs=2
-  TICK= 656  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=76('L')    NOS=2124       TORS=352   Z   ds=4 rs=2
-  TICK= 657  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=76('L')    NOS=2124       TORS=352   Z   ds=4 rs=2
-  TICK= 658  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=2200       NOS=76('L')    TORS=352       ds=3 rs=2
-  TICK= 659  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=2200       NOS=76('L')    TORS=352   Z   ds=3 rs=2
-  TICK= 660  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=76('L')    NOS=2200       TORS=352   Z   ds=3 rs=2
-  TICK= 661  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=76('L')    NOS=2200       TORS=352   Z   ds=3 rs=2
-  TICK= 662  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=76('L')    TORS=352   Z   ds=4 rs=2
-  TICK= 663  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=76('L')    TORS=352   Z   ds=4 rs=2
-  TICK= 664  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=75('K')    NOS=2200       TORS=352       ds=3 rs=2
-  TICK= 665  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=75('K')    NOS=2200       TORS=352   Z   ds=3 rs=2
-  TICK= 666  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=75('K')    NOS=2200       TORS=352   Z   ds=3 rs=2
-  TICK= 667  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=75('K')    NOS=2200       TORS=352   Z   ds=3 rs=2
-  TICK= 668  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=75('K')    NOS=75('K')    TORS=352   Z   ds=4 rs=2
-  TICK= 669  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=75('K')    NOS=75('K')    TORS=352   Z   ds=4 rs=2
-  TICK= 670  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=75('K')    TORS=352   Z   ds=5 rs=2
-  TICK= 671  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=75('K')    TORS=352   Z   ds=5 rs=2
-  TICK= 672  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=75('K')    TORS=352       ds=4 rs=2
-  TICK= 673  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=75('K')    TORS=352   Z   ds=4 rs=2
-  TICK= 674  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=75('K')    NOS=2200       TORS=352       ds=3 rs=2
-  TICK= 675  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=75('K')    NOS=2200       TORS=352   Z   ds=3 rs=2
-  TICK= 676  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=2200       NOS=75('K')    TORS=352   Z   ds=3 rs=2
-  TICK= 677  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=2200       NOS=75('K')    TORS=352   Z   ds=3 rs=2
-  TICK= 678  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=75('K')    NOS=2200       TORS=352   Z   ds=4 rs=2
-  TICK= 679  mPC= 0(FETCH       )  PC=108->108  IR=ADD         TOS=75('K')    NOS=2200       TORS=352   Z   ds=4 rs=2
-  TICK= 680  mPC= 6(EXEC_ADD    )  PC=108->112  IR=ADD         TOS=2275       NOS=75('K')    TORS=352       ds=3 rs=2
-  TICK= 681  mPC= 0(FETCH       )  PC=112->112  IR=SWAP        TOS=2275       NOS=75('K')    TORS=352   Z   ds=3 rs=2
-  TICK= 682  mPC= 4(EXEC_SWAP   )  PC=112->116  IR=SWAP        TOS=75('K')    NOS=2275       TORS=352   Z   ds=3 rs=2
-  TICK= 683  mPC= 0(FETCH       )  PC=116->116  IR=PUSH 1      TOS=75('K')    NOS=2275       TORS=352   Z   ds=3 rs=2
-  TICK= 684  mPC= 1(EXEC_PUSH   )  PC=116->120  IR=PUSH 1      TOS=1          NOS=75('K')    TORS=352   Z   ds=4 rs=2
-  TICK= 685  mPC= 0(FETCH       )  PC=120->120  IR=SUB         TOS=1          NOS=75('K')    TORS=352   Z   ds=4 rs=2
-  TICK= 686  mPC= 7(EXEC_SUB    )  PC=120->124  IR=SUB         TOS=74('J')    NOS=2275       TORS=352       ds=3 rs=2
-  TICK= 687  mPC= 0(FETCH       )  PC=124->124  IR=JMP 84      TOS=74('J')    NOS=2275       TORS=352   Z   ds=3 rs=2
-  TICK= 688  mPC=16(EXEC_JMP    )  PC=124->84   IR=JMP 84      TOS=74('J')    NOS=2275       TORS=352   Z   ds=3 rs=2
-  TICK= 689  mPC= 0(FETCH       )  PC= 84->84   IR=DUP         TOS=74('J')    NOS=2275       TORS=352   Z   ds=3 rs=2
-  TICK= 690  mPC= 2(EXEC_DUP    )  PC= 84->88   IR=DUP         TOS=74('J')    NOS=74('J')    TORS=352   Z   ds=4 rs=2
-  TICK= 691  mPC= 0(FETCH       )  PC= 88->88   IR=PUSH 0      TOS=74('J')    NOS=74('J')    TORS=352   Z   ds=4 rs=2
-  TICK= 692  mPC= 1(EXEC_PUSH   )  PC= 88->92   IR=PUSH 0      TOS=0          NOS=74('J')    TORS=352   Z   ds=5 rs=2
-  TICK= 693  mPC= 0(FETCH       )  PC= 92->92   IR=GT          TOS=0          NOS=74('J')    TORS=352   Z   ds=5 rs=2
-  TICK= 694  mPC=13(EXEC_GT     )  PC= 92->96   IR=GT          TOS=1          NOS=74('J')    TORS=352       ds=4 rs=2
-  TICK= 695  mPC= 0(FETCH       )  PC= 96->96   IR=JZ 128      TOS=1          NOS=74('J')    TORS=352   Z   ds=4 rs=2
-  TICK= 696  mPC=17(EXEC_JZ     )  PC= 96->100  IR=JZ 128      TOS=74('J')    NOS=2275       TORS=352       ds=3 rs=2
-  TICK= 697  mPC= 0(FETCH       )  PC=100->100  IR=SWAP        TOS=74('J')    NOS=2275       TORS=352   Z   ds=3 rs=2
-  TICK= 698  mPC= 4(EXEC_SWAP   )  PC=100->104  IR=SWAP        TOS=2275       NOS=74('J')    TORS=352   Z   ds=3 rs=2
-  TICK= 699  mPC= 0(FETCH       )  PC=104->104  IR=OVER        TOS=2275       NOS=74('J')    TORS=352   Z   ds=3 rs=2
-  TICK= 700  mPC= 5(EXEC_OVER   )  PC=104->108  IR=OVER        TOS=74('J')    NOS=2275       TORS=352   Z   ds=4 rs=2
 out_stdout: |
   source LoC: 75  code: 95 instr  data: 0 words
   ============================================================
   25164150
+out_log: |
+  TICK=   1  mPC= 0(FETCH       )  PC=  0->0    IR=CALL 85     TOS=·          NOS=·          TORS=·     Z   ds=0 rs=0
+  TICK=   2  mPC=18(EXEC_CALL   )  PC=  0->85   IR=CALL 85     TOS=·          NOS=·          TORS=1     Z   ds=0 rs=1
+  TICK=   3  mPC= 0(FETCH       )  PC= 85->85   IR=CALL 2      TOS=·          NOS=·          TORS=1     Z   ds=0 rs=1
+  TICK=   4  mPC=18(EXEC_CALL   )  PC= 85->2    IR=CALL 2      TOS=·          NOS=·          TORS=86    Z   ds=0 rs=2
+  TICK=   5  mPC= 0(FETCH       )  PC=  2->2    IR=PUSH 0      TOS=·          NOS=·          TORS=86    Z   ds=0 rs=2
+  TICK=   6  mPC= 1(EXEC_PUSH   )  PC=  2->3    IR=PUSH 0      TOS=0          NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=   7  mPC= 0(FETCH       )  PC=  3->3    IR=IN 0        TOS=0          NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=   8  mPC=21(EXEC_IN     )  PC=  3->4    IR=IN 0        TOS=49('1')    NOS=0          TORS=86    Z   ds=2 rs=2  IN[0]=49('1')
+  TICK=   9  mPC= 0(FETCH       )  PC=  4->4    IR=DUP         TOS=49('1')    NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  10  mPC= 2(EXEC_DUP    )  PC=  4->5    IR=DUP         TOS=49('1')    NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  11  mPC= 0(FETCH       )  PC=  5->5    IR=PUSH 10     TOS=49('1')    NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  12  mPC= 1(EXEC_PUSH   )  PC=  5->6    IR=PUSH 10     TOS=10         NOS=49('1')    TORS=86    Z   ds=4 rs=2
+  TICK=  13  mPC= 0(FETCH       )  PC=  6->6    IR=EQ          TOS=10         NOS=49('1')    TORS=86    Z   ds=4 rs=2
+  TICK=  14  mPC=11(EXEC_EQ     )  PC=  6->7    IR=EQ          TOS=0          NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  15  mPC= 0(FETCH       )  PC=  7->7    IR=PUSH 0      TOS=0          NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  16  mPC= 1(EXEC_PUSH   )  PC=  7->8    IR=PUSH 0      TOS=0          NOS=0          TORS=86    Z   ds=4 rs=2
+  TICK=  17  mPC= 0(FETCH       )  PC=  8->8    IR=EQ          TOS=0          NOS=0          TORS=86    Z   ds=4 rs=2
+  TICK=  18  mPC=11(EXEC_EQ     )  PC=  8->9    IR=EQ          TOS=1          NOS=49('1')    TORS=86        ds=3 rs=2
+  TICK=  19  mPC= 0(FETCH       )  PC=  9->9    IR=JZ 17       TOS=1          NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  20  mPC=17(EXEC_JZ     )  PC=  9->10   IR=JZ 17       TOS=49('1')    NOS=0          TORS=86        ds=2 rs=2
+  TICK=  21  mPC= 0(FETCH       )  PC= 10->10   IR=PUSH 48     TOS=49('1')    NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  22  mPC= 1(EXEC_PUSH   )  PC= 10->11   IR=PUSH 48     TOS=48('0')    NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  23  mPC= 0(FETCH       )  PC= 11->11   IR=SUB         TOS=48('0')    NOS=49('1')    TORS=86    Z   ds=3 rs=2
+  TICK=  24  mPC= 7(EXEC_SUB    )  PC= 11->12   IR=SUB         TOS=1          NOS=0          TORS=86        ds=2 rs=2
+  TICK=  25  mPC= 0(FETCH       )  PC= 12->12   IR=SWAP        TOS=1          NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  26  mPC= 4(EXEC_SWAP   )  PC= 12->13   IR=SWAP        TOS=0          NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  27  mPC= 0(FETCH       )  PC= 13->13   IR=PUSH 10     TOS=0          NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  28  mPC= 1(EXEC_PUSH   )  PC= 13->14   IR=PUSH 10     TOS=10         NOS=0          TORS=86    Z   ds=3 rs=2
+  TICK=  29  mPC= 0(FETCH       )  PC= 14->14   IR=MUL         TOS=10         NOS=0          TORS=86    Z   ds=3 rs=2
+  TICK=  30  mPC= 8(EXEC_MUL    )  PC= 14->15   IR=MUL         TOS=0          NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  31  mPC= 0(FETCH       )  PC= 15->15   IR=ADD         TOS=0          NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  32  mPC= 6(EXEC_ADD    )  PC= 15->16   IR=ADD         TOS=1          NOS=·          TORS=86        ds=1 rs=2
+  TICK=  33  mPC= 0(FETCH       )  PC= 16->16   IR=JMP 3       TOS=1          NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  34  mPC=16(EXEC_JMP    )  PC= 16->3    IR=JMP 3       TOS=1          NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  35  mPC= 0(FETCH       )  PC=  3->3    IR=IN 0        TOS=1          NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  36  mPC=21(EXEC_IN     )  PC=  3->4    IR=IN 0        TOS=48('0')    NOS=1          TORS=86    Z   ds=2 rs=2  IN[0]=48('0')
+  TICK=  37  mPC= 0(FETCH       )  PC=  4->4    IR=DUP         TOS=48('0')    NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  38  mPC= 2(EXEC_DUP    )  PC=  4->5    IR=DUP         TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  39  mPC= 0(FETCH       )  PC=  5->5    IR=PUSH 10     TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  40  mPC= 1(EXEC_PUSH   )  PC=  5->6    IR=PUSH 10     TOS=10         NOS=48('0')    TORS=86    Z   ds=4 rs=2
+  TICK=  41  mPC= 0(FETCH       )  PC=  6->6    IR=EQ          TOS=10         NOS=48('0')    TORS=86    Z   ds=4 rs=2
+  TICK=  42  mPC=11(EXEC_EQ     )  PC=  6->7    IR=EQ          TOS=0          NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  43  mPC= 0(FETCH       )  PC=  7->7    IR=PUSH 0      TOS=0          NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  44  mPC= 1(EXEC_PUSH   )  PC=  7->8    IR=PUSH 0      TOS=0          NOS=0          TORS=86    Z   ds=4 rs=2
+  TICK=  45  mPC= 0(FETCH       )  PC=  8->8    IR=EQ          TOS=0          NOS=0          TORS=86    Z   ds=4 rs=2
+  TICK=  46  mPC=11(EXEC_EQ     )  PC=  8->9    IR=EQ          TOS=1          NOS=48('0')    TORS=86        ds=3 rs=2
+  TICK=  47  mPC= 0(FETCH       )  PC=  9->9    IR=JZ 17       TOS=1          NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  48  mPC=17(EXEC_JZ     )  PC=  9->10   IR=JZ 17       TOS=48('0')    NOS=1          TORS=86        ds=2 rs=2
+  TICK=  49  mPC= 0(FETCH       )  PC= 10->10   IR=PUSH 48     TOS=48('0')    NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  50  mPC= 1(EXEC_PUSH   )  PC= 10->11   IR=PUSH 48     TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  51  mPC= 0(FETCH       )  PC= 11->11   IR=SUB         TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  52  mPC= 7(EXEC_SUB    )  PC= 11->12   IR=SUB         TOS=0          NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  53  mPC= 0(FETCH       )  PC= 12->12   IR=SWAP        TOS=0          NOS=1          TORS=86    Z   ds=2 rs=2
+  TICK=  54  mPC= 4(EXEC_SWAP   )  PC= 12->13   IR=SWAP        TOS=1          NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  55  mPC= 0(FETCH       )  PC= 13->13   IR=PUSH 10     TOS=1          NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  56  mPC= 1(EXEC_PUSH   )  PC= 13->14   IR=PUSH 10     TOS=10         NOS=1          TORS=86    Z   ds=3 rs=2
+  TICK=  57  mPC= 0(FETCH       )  PC= 14->14   IR=MUL         TOS=10         NOS=1          TORS=86    Z   ds=3 rs=2
+  TICK=  58  mPC= 8(EXEC_MUL    )  PC= 14->15   IR=MUL         TOS=10         NOS=0          TORS=86        ds=2 rs=2
+  TICK=  59  mPC= 0(FETCH       )  PC= 15->15   IR=ADD         TOS=10         NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  60  mPC= 6(EXEC_ADD    )  PC= 15->16   IR=ADD         TOS=10         NOS=·          TORS=86        ds=1 rs=2
+  TICK=  61  mPC= 0(FETCH       )  PC= 16->16   IR=JMP 3       TOS=10         NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  62  mPC=16(EXEC_JMP    )  PC= 16->3    IR=JMP 3       TOS=10         NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  63  mPC= 0(FETCH       )  PC=  3->3    IR=IN 0        TOS=10         NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  64  mPC=21(EXEC_IN     )  PC=  3->4    IR=IN 0        TOS=48('0')    NOS=10         TORS=86    Z   ds=2 rs=2  IN[0]=48('0')
+  TICK=  65  mPC= 0(FETCH       )  PC=  4->4    IR=DUP         TOS=48('0')    NOS=10         TORS=86    Z   ds=2 rs=2
+  TICK=  66  mPC= 2(EXEC_DUP    )  PC=  4->5    IR=DUP         TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  67  mPC= 0(FETCH       )  PC=  5->5    IR=PUSH 10     TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  68  mPC= 1(EXEC_PUSH   )  PC=  5->6    IR=PUSH 10     TOS=10         NOS=48('0')    TORS=86    Z   ds=4 rs=2
+  TICK=  69  mPC= 0(FETCH       )  PC=  6->6    IR=EQ          TOS=10         NOS=48('0')    TORS=86    Z   ds=4 rs=2
+  TICK=  70  mPC=11(EXEC_EQ     )  PC=  6->7    IR=EQ          TOS=0          NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  71  mPC= 0(FETCH       )  PC=  7->7    IR=PUSH 0      TOS=0          NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  72  mPC= 1(EXEC_PUSH   )  PC=  7->8    IR=PUSH 0      TOS=0          NOS=0          TORS=86    Z   ds=4 rs=2
+  TICK=  73  mPC= 0(FETCH       )  PC=  8->8    IR=EQ          TOS=0          NOS=0          TORS=86    Z   ds=4 rs=2
+  TICK=  74  mPC=11(EXEC_EQ     )  PC=  8->9    IR=EQ          TOS=1          NOS=48('0')    TORS=86        ds=3 rs=2
+  TICK=  75  mPC= 0(FETCH       )  PC=  9->9    IR=JZ 17       TOS=1          NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  76  mPC=17(EXEC_JZ     )  PC=  9->10   IR=JZ 17       TOS=48('0')    NOS=10         TORS=86        ds=2 rs=2
+  TICK=  77  mPC= 0(FETCH       )  PC= 10->10   IR=PUSH 48     TOS=48('0')    NOS=10         TORS=86    Z   ds=2 rs=2
+  TICK=  78  mPC= 1(EXEC_PUSH   )  PC= 10->11   IR=PUSH 48     TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  79  mPC= 0(FETCH       )  PC= 11->11   IR=SUB         TOS=48('0')    NOS=48('0')    TORS=86    Z   ds=3 rs=2
+  TICK=  80  mPC= 7(EXEC_SUB    )  PC= 11->12   IR=SUB         TOS=0          NOS=10         TORS=86    Z   ds=2 rs=2
+  TICK=  81  mPC= 0(FETCH       )  PC= 12->12   IR=SWAP        TOS=0          NOS=10         TORS=86    Z   ds=2 rs=2
+  TICK=  82  mPC= 4(EXEC_SWAP   )  PC= 12->13   IR=SWAP        TOS=10         NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  83  mPC= 0(FETCH       )  PC= 13->13   IR=PUSH 10     TOS=10         NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  84  mPC= 1(EXEC_PUSH   )  PC= 13->14   IR=PUSH 10     TOS=10         NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK=  85  mPC= 0(FETCH       )  PC= 14->14   IR=MUL         TOS=10         NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK=  86  mPC= 8(EXEC_MUL    )  PC= 14->15   IR=MUL         TOS=100('d')   NOS=0          TORS=86        ds=2 rs=2
+  TICK=  87  mPC= 0(FETCH       )  PC= 15->15   IR=ADD         TOS=100('d')   NOS=0          TORS=86    Z   ds=2 rs=2
+  TICK=  88  mPC= 6(EXEC_ADD    )  PC= 15->16   IR=ADD         TOS=100('d')   NOS=·          TORS=86        ds=1 rs=2
+  TICK=  89  mPC= 0(FETCH       )  PC= 16->16   IR=JMP 3       TOS=100('d')   NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  90  mPC=16(EXEC_JMP    )  PC= 16->3    IR=JMP 3       TOS=100('d')   NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  91  mPC= 0(FETCH       )  PC=  3->3    IR=IN 0        TOS=100('d')   NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK=  92  mPC=21(EXEC_IN     )  PC=  3->4    IR=IN 0        TOS=10         NOS=100('d')   TORS=86    Z   ds=2 rs=2  IN[0]=10
+  TICK=  93  mPC= 0(FETCH       )  PC=  4->4    IR=DUP         TOS=10         NOS=100('d')   TORS=86    Z   ds=2 rs=2
+  TICK=  94  mPC= 2(EXEC_DUP    )  PC=  4->5    IR=DUP         TOS=10         NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK=  95  mPC= 0(FETCH       )  PC=  5->5    IR=PUSH 10     TOS=10         NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK=  96  mPC= 1(EXEC_PUSH   )  PC=  5->6    IR=PUSH 10     TOS=10         NOS=10         TORS=86    Z   ds=4 rs=2
+  TICK=  97  mPC= 0(FETCH       )  PC=  6->6    IR=EQ          TOS=10         NOS=10         TORS=86    Z   ds=4 rs=2
+  TICK=  98  mPC=11(EXEC_EQ     )  PC=  6->7    IR=EQ          TOS=1          NOS=10         TORS=86        ds=3 rs=2
+  TICK=  99  mPC= 0(FETCH       )  PC=  7->7    IR=PUSH 0      TOS=1          NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK= 100  mPC= 1(EXEC_PUSH   )  PC=  7->8    IR=PUSH 0      TOS=0          NOS=1          TORS=86    Z   ds=4 rs=2
+  TICK= 101  mPC= 0(FETCH       )  PC=  8->8    IR=EQ          TOS=0          NOS=1          TORS=86    Z   ds=4 rs=2
+  TICK= 102  mPC=11(EXEC_EQ     )  PC=  8->9    IR=EQ          TOS=0          NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK= 103  mPC= 0(FETCH       )  PC=  9->9    IR=JZ 17       TOS=0          NOS=10         TORS=86    Z   ds=3 rs=2
+  TICK= 104  mPC=17(EXEC_JZ     )  PC=  9->17   IR=JZ 17       TOS=10         NOS=100('d')   TORS=86    Z   ds=2 rs=2
+  TICK= 105  mPC= 0(FETCH       )  PC= 17->17   IR=DROP        TOS=10         NOS=100('d')   TORS=86    Z   ds=2 rs=2
+  TICK= 106  mPC= 3(EXEC_DROP   )  PC= 17->18   IR=DROP        TOS=100('d')   NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK= 107  mPC= 0(FETCH       )  PC= 18->18   IR=RET         TOS=100('d')   NOS=·          TORS=86    Z   ds=1 rs=2
+  TICK= 108  mPC=19(EXEC_RET    )  PC= 18->86   IR=RET         TOS=100('d')   NOS=·          TORS=1     Z   ds=1 rs=1
+  TICK= 109  mPC= 0(FETCH       )  PC= 86->86   IR=DUP         TOS=100('d')   NOS=·          TORS=1     Z   ds=1 rs=1
+  TICK= 110  mPC= 2(EXEC_DUP    )  PC= 86->87   IR=DUP         TOS=100('d')   NOS=100('d')   TORS=1     Z   ds=2 rs=1
+  TICK= 111  mPC= 0(FETCH       )  PC= 87->87   IR=CALL 19     TOS=100('d')   NOS=100('d')   TORS=1     Z   ds=2 rs=1
+  TICK= 112  mPC=18(EXEC_CALL   )  PC= 87->19   IR=CALL 19     TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=2 rs=2
+  TICK= 113  mPC= 0(FETCH       )  PC= 19->19   IR=PUSH 0      TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=2 rs=2
+  TICK= 114  mPC= 1(EXEC_PUSH   )  PC= 19->20   IR=PUSH 0      TOS=0          NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 115  mPC= 0(FETCH       )  PC= 20->20   IR=SWAP        TOS=0          NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 116  mPC= 4(EXEC_SWAP   )  PC= 20->21   IR=SWAP        TOS=100('d')   NOS=0          TORS=88    Z   ds=3 rs=2
+  TICK= 117  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=100('d')   NOS=0          TORS=88    Z   ds=3 rs=2
+  TICK= 118  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 119  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 120  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=100('d')   TORS=88    Z   ds=5 rs=2
+  TICK= 121  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=100('d')   TORS=88    Z   ds=5 rs=2
+  TICK= 122  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=100('d')   TORS=88        ds=4 rs=2
+  TICK= 123  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 124  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=100('d')   NOS=0          TORS=88        ds=3 rs=2
+  TICK= 125  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=100('d')   NOS=0          TORS=88    Z   ds=3 rs=2
+  TICK= 126  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=0          NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 127  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=0          NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 128  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=100('d')   NOS=0          TORS=88    Z   ds=4 rs=2
+  TICK= 129  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=100('d')   NOS=0          TORS=88    Z   ds=4 rs=2
+  TICK= 130  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=100('d')   NOS=100('d')   TORS=88        ds=3 rs=2
+  TICK= 131  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 132  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 133  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=100('d')   NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 134  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 135  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 136  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=99('c')    NOS=100('d')   TORS=88        ds=3 rs=2
+  TICK= 137  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=99('c')    NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 138  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=99('c')    NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 139  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=99('c')    NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 140  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=99('c')    NOS=99('c')    TORS=88    Z   ds=4 rs=2
+  TICK= 141  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=99('c')    NOS=99('c')    TORS=88    Z   ds=4 rs=2
+  TICK= 142  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=99('c')    TORS=88    Z   ds=5 rs=2
+  TICK= 143  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=99('c')    TORS=88    Z   ds=5 rs=2
+  TICK= 144  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=99('c')    TORS=88        ds=4 rs=2
+  TICK= 145  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=99('c')    TORS=88    Z   ds=4 rs=2
+  TICK= 146  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=99('c')    NOS=100('d')   TORS=88        ds=3 rs=2
+  TICK= 147  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=99('c')    NOS=100('d')   TORS=88    Z   ds=3 rs=2
+  TICK= 148  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=100('d')   NOS=99('c')    TORS=88    Z   ds=3 rs=2
+  TICK= 149  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=100('d')   NOS=99('c')    TORS=88    Z   ds=3 rs=2
+  TICK= 150  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=99('c')    NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 151  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=99('c')    NOS=100('d')   TORS=88    Z   ds=4 rs=2
+  TICK= 152  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=199        NOS=99('c')    TORS=88        ds=3 rs=2
+  TICK= 153  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=199        NOS=99('c')    TORS=88    Z   ds=3 rs=2
+  TICK= 154  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=99('c')    NOS=199        TORS=88    Z   ds=3 rs=2
+  TICK= 155  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=99('c')    NOS=199        TORS=88    Z   ds=3 rs=2
+  TICK= 156  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=99('c')    TORS=88    Z   ds=4 rs=2
+  TICK= 157  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=99('c')    TORS=88    Z   ds=4 rs=2
+  TICK= 158  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=98('b')    NOS=199        TORS=88        ds=3 rs=2
+  TICK= 159  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=98('b')    NOS=199        TORS=88    Z   ds=3 rs=2
+  TICK= 160  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=98('b')    NOS=199        TORS=88    Z   ds=3 rs=2
+  TICK= 161  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=98('b')    NOS=199        TORS=88    Z   ds=3 rs=2
+  TICK= 162  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=98('b')    NOS=98('b')    TORS=88    Z   ds=4 rs=2
+  TICK= 163  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=98('b')    NOS=98('b')    TORS=88    Z   ds=4 rs=2
+  TICK= 164  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=98('b')    TORS=88    Z   ds=5 rs=2
+  TICK= 165  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=98('b')    TORS=88    Z   ds=5 rs=2
+  TICK= 166  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=98('b')    TORS=88        ds=4 rs=2
+  TICK= 167  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=98('b')    TORS=88    Z   ds=4 rs=2
+  TICK= 168  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=98('b')    NOS=199        TORS=88        ds=3 rs=2
+  TICK= 169  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=98('b')    NOS=199        TORS=88    Z   ds=3 rs=2
+  TICK= 170  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=199        NOS=98('b')    TORS=88    Z   ds=3 rs=2
+  TICK= 171  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=199        NOS=98('b')    TORS=88    Z   ds=3 rs=2
+  TICK= 172  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=98('b')    NOS=199        TORS=88    Z   ds=4 rs=2
+  TICK= 173  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=98('b')    NOS=199        TORS=88    Z   ds=4 rs=2
+  TICK= 174  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=297        NOS=98('b')    TORS=88        ds=3 rs=2
+  TICK= 175  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=297        NOS=98('b')    TORS=88    Z   ds=3 rs=2
+  TICK= 176  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=98('b')    NOS=297        TORS=88    Z   ds=3 rs=2
+  TICK= 177  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=98('b')    NOS=297        TORS=88    Z   ds=3 rs=2
+  TICK= 178  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=98('b')    TORS=88    Z   ds=4 rs=2
+  TICK= 179  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=98('b')    TORS=88    Z   ds=4 rs=2
+  TICK= 180  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=97('a')    NOS=297        TORS=88        ds=3 rs=2
+  TICK= 181  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=97('a')    NOS=297        TORS=88    Z   ds=3 rs=2
+  TICK= 182  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=97('a')    NOS=297        TORS=88    Z   ds=3 rs=2
+  TICK= 183  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=97('a')    NOS=297        TORS=88    Z   ds=3 rs=2
+  TICK= 184  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=97('a')    NOS=97('a')    TORS=88    Z   ds=4 rs=2
+  TICK= 185  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=97('a')    NOS=97('a')    TORS=88    Z   ds=4 rs=2
+  TICK= 186  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=97('a')    TORS=88    Z   ds=5 rs=2
+  TICK= 187  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=97('a')    TORS=88    Z   ds=5 rs=2
+  TICK= 188  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=97('a')    TORS=88        ds=4 rs=2
+  TICK= 189  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=97('a')    TORS=88    Z   ds=4 rs=2
+  TICK= 190  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=97('a')    NOS=297        TORS=88        ds=3 rs=2
+  TICK= 191  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=97('a')    NOS=297        TORS=88    Z   ds=3 rs=2
+  TICK= 192  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=297        NOS=97('a')    TORS=88    Z   ds=3 rs=2
+  TICK= 193  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=297        NOS=97('a')    TORS=88    Z   ds=3 rs=2
+  TICK= 194  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=97('a')    NOS=297        TORS=88    Z   ds=4 rs=2
+  TICK= 195  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=97('a')    NOS=297        TORS=88    Z   ds=4 rs=2
+  TICK= 196  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=394        NOS=97('a')    TORS=88        ds=3 rs=2
+  TICK= 197  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=394        NOS=97('a')    TORS=88    Z   ds=3 rs=2
+  TICK= 198  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=97('a')    NOS=394        TORS=88    Z   ds=3 rs=2
+  TICK= 199  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=97('a')    NOS=394        TORS=88    Z   ds=3 rs=2
+  TICK= 200  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=97('a')    TORS=88    Z   ds=4 rs=2
+  TICK= 201  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=97('a')    TORS=88    Z   ds=4 rs=2
+  TICK= 202  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=96('`')    NOS=394        TORS=88        ds=3 rs=2
+  TICK= 203  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=96('`')    NOS=394        TORS=88    Z   ds=3 rs=2
+  TICK= 204  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=96('`')    NOS=394        TORS=88    Z   ds=3 rs=2
+  TICK= 205  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=96('`')    NOS=394        TORS=88    Z   ds=3 rs=2
+  TICK= 206  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=96('`')    NOS=96('`')    TORS=88    Z   ds=4 rs=2
+  TICK= 207  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=96('`')    NOS=96('`')    TORS=88    Z   ds=4 rs=2
+  TICK= 208  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=96('`')    TORS=88    Z   ds=5 rs=2
+  TICK= 209  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=96('`')    TORS=88    Z   ds=5 rs=2
+  TICK= 210  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=96('`')    TORS=88        ds=4 rs=2
+  TICK= 211  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=96('`')    TORS=88    Z   ds=4 rs=2
+  TICK= 212  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=96('`')    NOS=394        TORS=88        ds=3 rs=2
+  TICK= 213  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=96('`')    NOS=394        TORS=88    Z   ds=3 rs=2
+  TICK= 214  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=394        NOS=96('`')    TORS=88    Z   ds=3 rs=2
+  TICK= 215  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=394        NOS=96('`')    TORS=88    Z   ds=3 rs=2
+  TICK= 216  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=96('`')    NOS=394        TORS=88    Z   ds=4 rs=2
+  TICK= 217  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=96('`')    NOS=394        TORS=88    Z   ds=4 rs=2
+  TICK= 218  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=490        NOS=96('`')    TORS=88        ds=3 rs=2
+  TICK= 219  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=490        NOS=96('`')    TORS=88    Z   ds=3 rs=2
+  TICK= 220  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=96('`')    NOS=490        TORS=88    Z   ds=3 rs=2
+  TICK= 221  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=96('`')    NOS=490        TORS=88    Z   ds=3 rs=2
+  TICK= 222  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=96('`')    TORS=88    Z   ds=4 rs=2
+  TICK= 223  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=96('`')    TORS=88    Z   ds=4 rs=2
+  TICK= 224  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=95('_')    NOS=490        TORS=88        ds=3 rs=2
+  TICK= 225  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=95('_')    NOS=490        TORS=88    Z   ds=3 rs=2
+  TICK= 226  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=95('_')    NOS=490        TORS=88    Z   ds=3 rs=2
+  TICK= 227  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=95('_')    NOS=490        TORS=88    Z   ds=3 rs=2
+  TICK= 228  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=95('_')    NOS=95('_')    TORS=88    Z   ds=4 rs=2
+  TICK= 229  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=95('_')    NOS=95('_')    TORS=88    Z   ds=4 rs=2
+  TICK= 230  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=95('_')    TORS=88    Z   ds=5 rs=2
+  TICK= 231  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=95('_')    TORS=88    Z   ds=5 rs=2
+  TICK= 232  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=95('_')    TORS=88        ds=4 rs=2
+  TICK= 233  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=95('_')    TORS=88    Z   ds=4 rs=2
+  TICK= 234  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=95('_')    NOS=490        TORS=88        ds=3 rs=2
+  TICK= 235  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=95('_')    NOS=490        TORS=88    Z   ds=3 rs=2
+  TICK= 236  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=490        NOS=95('_')    TORS=88    Z   ds=3 rs=2
+  TICK= 237  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=490        NOS=95('_')    TORS=88    Z   ds=3 rs=2
+  TICK= 238  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=95('_')    NOS=490        TORS=88    Z   ds=4 rs=2
+  TICK= 239  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=95('_')    NOS=490        TORS=88    Z   ds=4 rs=2
+  TICK= 240  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=585        NOS=95('_')    TORS=88        ds=3 rs=2
+  TICK= 241  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=585        NOS=95('_')    TORS=88    Z   ds=3 rs=2
+  TICK= 242  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=95('_')    NOS=585        TORS=88    Z   ds=3 rs=2
+  TICK= 243  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=95('_')    NOS=585        TORS=88    Z   ds=3 rs=2
+  TICK= 244  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=95('_')    TORS=88    Z   ds=4 rs=2
+  TICK= 245  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=95('_')    TORS=88    Z   ds=4 rs=2
+  TICK= 246  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=94('^')    NOS=585        TORS=88        ds=3 rs=2
+  TICK= 247  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=94('^')    NOS=585        TORS=88    Z   ds=3 rs=2
+  TICK= 248  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=94('^')    NOS=585        TORS=88    Z   ds=3 rs=2
+  TICK= 249  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=94('^')    NOS=585        TORS=88    Z   ds=3 rs=2
+  TICK= 250  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=94('^')    NOS=94('^')    TORS=88    Z   ds=4 rs=2
+  TICK= 251  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=94('^')    NOS=94('^')    TORS=88    Z   ds=4 rs=2
+  TICK= 252  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=94('^')    TORS=88    Z   ds=5 rs=2
+  TICK= 253  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=94('^')    TORS=88    Z   ds=5 rs=2
+  TICK= 254  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=94('^')    TORS=88        ds=4 rs=2
+  TICK= 255  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=94('^')    TORS=88    Z   ds=4 rs=2
+  TICK= 256  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=94('^')    NOS=585        TORS=88        ds=3 rs=2
+  TICK= 257  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=94('^')    NOS=585        TORS=88    Z   ds=3 rs=2
+  TICK= 258  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=585        NOS=94('^')    TORS=88    Z   ds=3 rs=2
+  TICK= 259  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=585        NOS=94('^')    TORS=88    Z   ds=3 rs=2
+  TICK= 260  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=94('^')    NOS=585        TORS=88    Z   ds=4 rs=2
+  TICK= 261  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=94('^')    NOS=585        TORS=88    Z   ds=4 rs=2
+  TICK= 262  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=679        NOS=94('^')    TORS=88        ds=3 rs=2
+  TICK= 263  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=679        NOS=94('^')    TORS=88    Z   ds=3 rs=2
+  TICK= 264  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=94('^')    NOS=679        TORS=88    Z   ds=3 rs=2
+  TICK= 265  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=94('^')    NOS=679        TORS=88    Z   ds=3 rs=2
+  TICK= 266  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=94('^')    TORS=88    Z   ds=4 rs=2
+  TICK= 267  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=94('^')    TORS=88    Z   ds=4 rs=2
+  TICK= 268  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=93(']')    NOS=679        TORS=88        ds=3 rs=2
+  TICK= 269  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=93(']')    NOS=679        TORS=88    Z   ds=3 rs=2
+  TICK= 270  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=93(']')    NOS=679        TORS=88    Z   ds=3 rs=2
+  TICK= 271  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=93(']')    NOS=679        TORS=88    Z   ds=3 rs=2
+  TICK= 272  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=93(']')    NOS=93(']')    TORS=88    Z   ds=4 rs=2
+  TICK= 273  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=93(']')    NOS=93(']')    TORS=88    Z   ds=4 rs=2
+  TICK= 274  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=93(']')    TORS=88    Z   ds=5 rs=2
+  TICK= 275  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=93(']')    TORS=88    Z   ds=5 rs=2
+  TICK= 276  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=93(']')    TORS=88        ds=4 rs=2
+  TICK= 277  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=93(']')    TORS=88    Z   ds=4 rs=2
+  TICK= 278  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=93(']')    NOS=679        TORS=88        ds=3 rs=2
+  TICK= 279  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=93(']')    NOS=679        TORS=88    Z   ds=3 rs=2
+  TICK= 280  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=679        NOS=93(']')    TORS=88    Z   ds=3 rs=2
+  TICK= 281  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=679        NOS=93(']')    TORS=88    Z   ds=3 rs=2
+  TICK= 282  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=93(']')    NOS=679        TORS=88    Z   ds=4 rs=2
+  TICK= 283  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=93(']')    NOS=679        TORS=88    Z   ds=4 rs=2
+  TICK= 284  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=772        NOS=93(']')    TORS=88        ds=3 rs=2
+  TICK= 285  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=772        NOS=93(']')    TORS=88    Z   ds=3 rs=2
+  TICK= 286  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=93(']')    NOS=772        TORS=88    Z   ds=3 rs=2
+  TICK= 287  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=93(']')    NOS=772        TORS=88    Z   ds=3 rs=2
+  TICK= 288  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=93(']')    TORS=88    Z   ds=4 rs=2
+  TICK= 289  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=93(']')    TORS=88    Z   ds=4 rs=2
+  TICK= 290  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=92('\\')   NOS=772        TORS=88        ds=3 rs=2
+  TICK= 291  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=92('\\')   NOS=772        TORS=88    Z   ds=3 rs=2
+  TICK= 292  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=92('\\')   NOS=772        TORS=88    Z   ds=3 rs=2
+  TICK= 293  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=92('\\')   NOS=772        TORS=88    Z   ds=3 rs=2
+  TICK= 294  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=92('\\')   NOS=92('\\')   TORS=88    Z   ds=4 rs=2
+  TICK= 295  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=92('\\')   NOS=92('\\')   TORS=88    Z   ds=4 rs=2
+  TICK= 296  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=92('\\')   TORS=88    Z   ds=5 rs=2
+  TICK= 297  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=92('\\')   TORS=88    Z   ds=5 rs=2
+  TICK= 298  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=92('\\')   TORS=88        ds=4 rs=2
+  TICK= 299  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=92('\\')   TORS=88    Z   ds=4 rs=2
+  TICK= 300  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=92('\\')   NOS=772        TORS=88        ds=3 rs=2
+  TICK= 301  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=92('\\')   NOS=772        TORS=88    Z   ds=3 rs=2
+  TICK= 302  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=772        NOS=92('\\')   TORS=88    Z   ds=3 rs=2
+  TICK= 303  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=772        NOS=92('\\')   TORS=88    Z   ds=3 rs=2
+  TICK= 304  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=92('\\')   NOS=772        TORS=88    Z   ds=4 rs=2
+  TICK= 305  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=92('\\')   NOS=772        TORS=88    Z   ds=4 rs=2
+  TICK= 306  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=864        NOS=92('\\')   TORS=88        ds=3 rs=2
+  TICK= 307  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=864        NOS=92('\\')   TORS=88    Z   ds=3 rs=2
+  TICK= 308  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=92('\\')   NOS=864        TORS=88    Z   ds=3 rs=2
+  TICK= 309  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=92('\\')   NOS=864        TORS=88    Z   ds=3 rs=2
+  TICK= 310  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=92('\\')   TORS=88    Z   ds=4 rs=2
+  TICK= 311  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=92('\\')   TORS=88    Z   ds=4 rs=2
+  TICK= 312  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=91('[')    NOS=864        TORS=88        ds=3 rs=2
+  TICK= 313  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=91('[')    NOS=864        TORS=88    Z   ds=3 rs=2
+  TICK= 314  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=91('[')    NOS=864        TORS=88    Z   ds=3 rs=2
+  TICK= 315  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=91('[')    NOS=864        TORS=88    Z   ds=3 rs=2
+  TICK= 316  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=91('[')    NOS=91('[')    TORS=88    Z   ds=4 rs=2
+  TICK= 317  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=91('[')    NOS=91('[')    TORS=88    Z   ds=4 rs=2
+  TICK= 318  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=91('[')    TORS=88    Z   ds=5 rs=2
+  TICK= 319  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=91('[')    TORS=88    Z   ds=5 rs=2
+  TICK= 320  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=91('[')    TORS=88        ds=4 rs=2
+  TICK= 321  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=91('[')    TORS=88    Z   ds=4 rs=2
+  TICK= 322  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=91('[')    NOS=864        TORS=88        ds=3 rs=2
+  TICK= 323  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=91('[')    NOS=864        TORS=88    Z   ds=3 rs=2
+  TICK= 324  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=864        NOS=91('[')    TORS=88    Z   ds=3 rs=2
+  TICK= 325  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=864        NOS=91('[')    TORS=88    Z   ds=3 rs=2
+  TICK= 326  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=91('[')    NOS=864        TORS=88    Z   ds=4 rs=2
+  TICK= 327  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=91('[')    NOS=864        TORS=88    Z   ds=4 rs=2
+  TICK= 328  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=955        NOS=91('[')    TORS=88        ds=3 rs=2
+  TICK= 329  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=955        NOS=91('[')    TORS=88    Z   ds=3 rs=2
+  TICK= 330  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=91('[')    NOS=955        TORS=88    Z   ds=3 rs=2
+  TICK= 331  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=91('[')    NOS=955        TORS=88    Z   ds=3 rs=2
+  TICK= 332  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=91('[')    TORS=88    Z   ds=4 rs=2
+  TICK= 333  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=91('[')    TORS=88    Z   ds=4 rs=2
+  TICK= 334  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=90('Z')    NOS=955        TORS=88        ds=3 rs=2
+  TICK= 335  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=90('Z')    NOS=955        TORS=88    Z   ds=3 rs=2
+  TICK= 336  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=90('Z')    NOS=955        TORS=88    Z   ds=3 rs=2
+  TICK= 337  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=90('Z')    NOS=955        TORS=88    Z   ds=3 rs=2
+  TICK= 338  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=90('Z')    NOS=90('Z')    TORS=88    Z   ds=4 rs=2
+  TICK= 339  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=90('Z')    NOS=90('Z')    TORS=88    Z   ds=4 rs=2
+  TICK= 340  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=90('Z')    TORS=88    Z   ds=5 rs=2
+  TICK= 341  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=90('Z')    TORS=88    Z   ds=5 rs=2
+  TICK= 342  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=90('Z')    TORS=88        ds=4 rs=2
+  TICK= 343  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=90('Z')    TORS=88    Z   ds=4 rs=2
+  TICK= 344  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=90('Z')    NOS=955        TORS=88        ds=3 rs=2
+  TICK= 345  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=90('Z')    NOS=955        TORS=88    Z   ds=3 rs=2
+  TICK= 346  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=955        NOS=90('Z')    TORS=88    Z   ds=3 rs=2
+  TICK= 347  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=955        NOS=90('Z')    TORS=88    Z   ds=3 rs=2
+  TICK= 348  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=90('Z')    NOS=955        TORS=88    Z   ds=4 rs=2
+  TICK= 349  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=90('Z')    NOS=955        TORS=88    Z   ds=4 rs=2
+  TICK= 350  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1045       NOS=90('Z')    TORS=88        ds=3 rs=2
+  TICK= 351  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1045       NOS=90('Z')    TORS=88    Z   ds=3 rs=2
+  TICK= 352  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=90('Z')    NOS=1045       TORS=88    Z   ds=3 rs=2
+  TICK= 353  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=90('Z')    NOS=1045       TORS=88    Z   ds=3 rs=2
+  TICK= 354  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=90('Z')    TORS=88    Z   ds=4 rs=2
+  TICK= 355  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=90('Z')    TORS=88    Z   ds=4 rs=2
+  TICK= 356  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=89('Y')    NOS=1045       TORS=88        ds=3 rs=2
+  TICK= 357  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=89('Y')    NOS=1045       TORS=88    Z   ds=3 rs=2
+  TICK= 358  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=89('Y')    NOS=1045       TORS=88    Z   ds=3 rs=2
+  TICK= 359  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=89('Y')    NOS=1045       TORS=88    Z   ds=3 rs=2
+  TICK= 360  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=89('Y')    NOS=89('Y')    TORS=88    Z   ds=4 rs=2
+  TICK= 361  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=89('Y')    NOS=89('Y')    TORS=88    Z   ds=4 rs=2
+  TICK= 362  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=89('Y')    TORS=88    Z   ds=5 rs=2
+  TICK= 363  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=89('Y')    TORS=88    Z   ds=5 rs=2
+  TICK= 364  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=89('Y')    TORS=88        ds=4 rs=2
+  TICK= 365  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=89('Y')    TORS=88    Z   ds=4 rs=2
+  TICK= 366  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=89('Y')    NOS=1045       TORS=88        ds=3 rs=2
+  TICK= 367  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=89('Y')    NOS=1045       TORS=88    Z   ds=3 rs=2
+  TICK= 368  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1045       NOS=89('Y')    TORS=88    Z   ds=3 rs=2
+  TICK= 369  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1045       NOS=89('Y')    TORS=88    Z   ds=3 rs=2
+  TICK= 370  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=89('Y')    NOS=1045       TORS=88    Z   ds=4 rs=2
+  TICK= 371  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=89('Y')    NOS=1045       TORS=88    Z   ds=4 rs=2
+  TICK= 372  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1134       NOS=89('Y')    TORS=88        ds=3 rs=2
+  TICK= 373  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1134       NOS=89('Y')    TORS=88    Z   ds=3 rs=2
+  TICK= 374  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=89('Y')    NOS=1134       TORS=88    Z   ds=3 rs=2
+  TICK= 375  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=89('Y')    NOS=1134       TORS=88    Z   ds=3 rs=2
+  TICK= 376  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=89('Y')    TORS=88    Z   ds=4 rs=2
+  TICK= 377  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=89('Y')    TORS=88    Z   ds=4 rs=2
+  TICK= 378  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=88('X')    NOS=1134       TORS=88        ds=3 rs=2
+  TICK= 379  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=88('X')    NOS=1134       TORS=88    Z   ds=3 rs=2
+  TICK= 380  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=88('X')    NOS=1134       TORS=88    Z   ds=3 rs=2
+  TICK= 381  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=88('X')    NOS=1134       TORS=88    Z   ds=3 rs=2
+  TICK= 382  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=88('X')    NOS=88('X')    TORS=88    Z   ds=4 rs=2
+  TICK= 383  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=88('X')    NOS=88('X')    TORS=88    Z   ds=4 rs=2
+  TICK= 384  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=88('X')    TORS=88    Z   ds=5 rs=2
+  TICK= 385  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=88('X')    TORS=88    Z   ds=5 rs=2
+  TICK= 386  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=88('X')    TORS=88        ds=4 rs=2
+  TICK= 387  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=88('X')    TORS=88    Z   ds=4 rs=2
+  TICK= 388  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=88('X')    NOS=1134       TORS=88        ds=3 rs=2
+  TICK= 389  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=88('X')    NOS=1134       TORS=88    Z   ds=3 rs=2
+  TICK= 390  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1134       NOS=88('X')    TORS=88    Z   ds=3 rs=2
+  TICK= 391  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1134       NOS=88('X')    TORS=88    Z   ds=3 rs=2
+  TICK= 392  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=88('X')    NOS=1134       TORS=88    Z   ds=4 rs=2
+  TICK= 393  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=88('X')    NOS=1134       TORS=88    Z   ds=4 rs=2
+  TICK= 394  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1222       NOS=88('X')    TORS=88        ds=3 rs=2
+  TICK= 395  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1222       NOS=88('X')    TORS=88    Z   ds=3 rs=2
+  TICK= 396  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=88('X')    NOS=1222       TORS=88    Z   ds=3 rs=2
+  TICK= 397  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=88('X')    NOS=1222       TORS=88    Z   ds=3 rs=2
+  TICK= 398  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=88('X')    TORS=88    Z   ds=4 rs=2
+  TICK= 399  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=88('X')    TORS=88    Z   ds=4 rs=2
+  TICK= 400  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=87('W')    NOS=1222       TORS=88        ds=3 rs=2
+  TICK= 401  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=87('W')    NOS=1222       TORS=88    Z   ds=3 rs=2
+  TICK= 402  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=87('W')    NOS=1222       TORS=88    Z   ds=3 rs=2
+  TICK= 403  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=87('W')    NOS=1222       TORS=88    Z   ds=3 rs=2
+  TICK= 404  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=87('W')    NOS=87('W')    TORS=88    Z   ds=4 rs=2
+  TICK= 405  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=87('W')    NOS=87('W')    TORS=88    Z   ds=4 rs=2
+  TICK= 406  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=87('W')    TORS=88    Z   ds=5 rs=2
+  TICK= 407  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=87('W')    TORS=88    Z   ds=5 rs=2
+  TICK= 408  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=87('W')    TORS=88        ds=4 rs=2
+  TICK= 409  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=87('W')    TORS=88    Z   ds=4 rs=2
+  TICK= 410  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=87('W')    NOS=1222       TORS=88        ds=3 rs=2
+  TICK= 411  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=87('W')    NOS=1222       TORS=88    Z   ds=3 rs=2
+  TICK= 412  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1222       NOS=87('W')    TORS=88    Z   ds=3 rs=2
+  TICK= 413  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1222       NOS=87('W')    TORS=88    Z   ds=3 rs=2
+  TICK= 414  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=87('W')    NOS=1222       TORS=88    Z   ds=4 rs=2
+  TICK= 415  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=87('W')    NOS=1222       TORS=88    Z   ds=4 rs=2
+  TICK= 416  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1309       NOS=87('W')    TORS=88        ds=3 rs=2
+  TICK= 417  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1309       NOS=87('W')    TORS=88    Z   ds=3 rs=2
+  TICK= 418  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=87('W')    NOS=1309       TORS=88    Z   ds=3 rs=2
+  TICK= 419  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=87('W')    NOS=1309       TORS=88    Z   ds=3 rs=2
+  TICK= 420  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=87('W')    TORS=88    Z   ds=4 rs=2
+  TICK= 421  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=87('W')    TORS=88    Z   ds=4 rs=2
+  TICK= 422  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=86('V')    NOS=1309       TORS=88        ds=3 rs=2
+  TICK= 423  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=86('V')    NOS=1309       TORS=88    Z   ds=3 rs=2
+  TICK= 424  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=86('V')    NOS=1309       TORS=88    Z   ds=3 rs=2
+  TICK= 425  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=86('V')    NOS=1309       TORS=88    Z   ds=3 rs=2
+  TICK= 426  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=86('V')    NOS=86('V')    TORS=88    Z   ds=4 rs=2
+  TICK= 427  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=86('V')    NOS=86('V')    TORS=88    Z   ds=4 rs=2
+  TICK= 428  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=86('V')    TORS=88    Z   ds=5 rs=2
+  TICK= 429  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=86('V')    TORS=88    Z   ds=5 rs=2
+  TICK= 430  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=86('V')    TORS=88        ds=4 rs=2
+  TICK= 431  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=86('V')    TORS=88    Z   ds=4 rs=2
+  TICK= 432  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=86('V')    NOS=1309       TORS=88        ds=3 rs=2
+  TICK= 433  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=86('V')    NOS=1309       TORS=88    Z   ds=3 rs=2
+  TICK= 434  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1309       NOS=86('V')    TORS=88    Z   ds=3 rs=2
+  TICK= 435  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1309       NOS=86('V')    TORS=88    Z   ds=3 rs=2
+  TICK= 436  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=86('V')    NOS=1309       TORS=88    Z   ds=4 rs=2
+  TICK= 437  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=86('V')    NOS=1309       TORS=88    Z   ds=4 rs=2
+  TICK= 438  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1395       NOS=86('V')    TORS=88        ds=3 rs=2
+  TICK= 439  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1395       NOS=86('V')    TORS=88    Z   ds=3 rs=2
+  TICK= 440  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=86('V')    NOS=1395       TORS=88    Z   ds=3 rs=2
+  TICK= 441  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=86('V')    NOS=1395       TORS=88    Z   ds=3 rs=2
+  TICK= 442  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=86('V')    TORS=88    Z   ds=4 rs=2
+  TICK= 443  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=86('V')    TORS=88    Z   ds=4 rs=2
+  TICK= 444  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=85('U')    NOS=1395       TORS=88        ds=3 rs=2
+  TICK= 445  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=85('U')    NOS=1395       TORS=88    Z   ds=3 rs=2
+  TICK= 446  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=85('U')    NOS=1395       TORS=88    Z   ds=3 rs=2
+  TICK= 447  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=85('U')    NOS=1395       TORS=88    Z   ds=3 rs=2
+  TICK= 448  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=85('U')    NOS=85('U')    TORS=88    Z   ds=4 rs=2
+  TICK= 449  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=85('U')    NOS=85('U')    TORS=88    Z   ds=4 rs=2
+  TICK= 450  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=85('U')    TORS=88    Z   ds=5 rs=2
+  TICK= 451  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=85('U')    TORS=88    Z   ds=5 rs=2
+  TICK= 452  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=85('U')    TORS=88        ds=4 rs=2
+  TICK= 453  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=85('U')    TORS=88    Z   ds=4 rs=2
+  TICK= 454  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=85('U')    NOS=1395       TORS=88        ds=3 rs=2
+  TICK= 455  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=85('U')    NOS=1395       TORS=88    Z   ds=3 rs=2
+  TICK= 456  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1395       NOS=85('U')    TORS=88    Z   ds=3 rs=2
+  TICK= 457  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1395       NOS=85('U')    TORS=88    Z   ds=3 rs=2
+  TICK= 458  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=85('U')    NOS=1395       TORS=88    Z   ds=4 rs=2
+  TICK= 459  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=85('U')    NOS=1395       TORS=88    Z   ds=4 rs=2
+  TICK= 460  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1480       NOS=85('U')    TORS=88        ds=3 rs=2
+  TICK= 461  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1480       NOS=85('U')    TORS=88    Z   ds=3 rs=2
+  TICK= 462  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=85('U')    NOS=1480       TORS=88    Z   ds=3 rs=2
+  TICK= 463  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=85('U')    NOS=1480       TORS=88    Z   ds=3 rs=2
+  TICK= 464  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=85('U')    TORS=88    Z   ds=4 rs=2
+  TICK= 465  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=85('U')    TORS=88    Z   ds=4 rs=2
+  TICK= 466  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=84('T')    NOS=1480       TORS=88        ds=3 rs=2
+  TICK= 467  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=84('T')    NOS=1480       TORS=88    Z   ds=3 rs=2
+  TICK= 468  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=84('T')    NOS=1480       TORS=88    Z   ds=3 rs=2
+  TICK= 469  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=84('T')    NOS=1480       TORS=88    Z   ds=3 rs=2
+  TICK= 470  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=84('T')    NOS=84('T')    TORS=88    Z   ds=4 rs=2
+  TICK= 471  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=84('T')    NOS=84('T')    TORS=88    Z   ds=4 rs=2
+  TICK= 472  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=84('T')    TORS=88    Z   ds=5 rs=2
+  TICK= 473  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=84('T')    TORS=88    Z   ds=5 rs=2
+  TICK= 474  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=84('T')    TORS=88        ds=4 rs=2
+  TICK= 475  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=84('T')    TORS=88    Z   ds=4 rs=2
+  TICK= 476  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=84('T')    NOS=1480       TORS=88        ds=3 rs=2
+  TICK= 477  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=84('T')    NOS=1480       TORS=88    Z   ds=3 rs=2
+  TICK= 478  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1480       NOS=84('T')    TORS=88    Z   ds=3 rs=2
+  TICK= 479  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1480       NOS=84('T')    TORS=88    Z   ds=3 rs=2
+  TICK= 480  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=84('T')    NOS=1480       TORS=88    Z   ds=4 rs=2
+  TICK= 481  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=84('T')    NOS=1480       TORS=88    Z   ds=4 rs=2
+  TICK= 482  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1564       NOS=84('T')    TORS=88        ds=3 rs=2
+  TICK= 483  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1564       NOS=84('T')    TORS=88    Z   ds=3 rs=2
+  TICK= 484  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=84('T')    NOS=1564       TORS=88    Z   ds=3 rs=2
+  TICK= 485  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=84('T')    NOS=1564       TORS=88    Z   ds=3 rs=2
+  TICK= 486  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=84('T')    TORS=88    Z   ds=4 rs=2
+  TICK= 487  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=84('T')    TORS=88    Z   ds=4 rs=2
+  TICK= 488  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=83('S')    NOS=1564       TORS=88        ds=3 rs=2
+  TICK= 489  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=83('S')    NOS=1564       TORS=88    Z   ds=3 rs=2
+  TICK= 490  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=83('S')    NOS=1564       TORS=88    Z   ds=3 rs=2
+  TICK= 491  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=83('S')    NOS=1564       TORS=88    Z   ds=3 rs=2
+  TICK= 492  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=83('S')    NOS=83('S')    TORS=88    Z   ds=4 rs=2
+  TICK= 493  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=83('S')    NOS=83('S')    TORS=88    Z   ds=4 rs=2
+  TICK= 494  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=83('S')    TORS=88    Z   ds=5 rs=2
+  TICK= 495  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=83('S')    TORS=88    Z   ds=5 rs=2
+  TICK= 496  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=83('S')    TORS=88        ds=4 rs=2
+  TICK= 497  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=83('S')    TORS=88    Z   ds=4 rs=2
+  TICK= 498  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=83('S')    NOS=1564       TORS=88        ds=3 rs=2
+  TICK= 499  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=83('S')    NOS=1564       TORS=88    Z   ds=3 rs=2
+  TICK= 500  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1564       NOS=83('S')    TORS=88    Z   ds=3 rs=2
+  TICK= 501  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1564       NOS=83('S')    TORS=88    Z   ds=3 rs=2
+  TICK= 502  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=83('S')    NOS=1564       TORS=88    Z   ds=4 rs=2
+  TICK= 503  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=83('S')    NOS=1564       TORS=88    Z   ds=4 rs=2
+  TICK= 504  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1647       NOS=83('S')    TORS=88        ds=3 rs=2
+  TICK= 505  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1647       NOS=83('S')    TORS=88    Z   ds=3 rs=2
+  TICK= 506  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=83('S')    NOS=1647       TORS=88    Z   ds=3 rs=2
+  TICK= 507  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=83('S')    NOS=1647       TORS=88    Z   ds=3 rs=2
+  TICK= 508  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=83('S')    TORS=88    Z   ds=4 rs=2
+  TICK= 509  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=83('S')    TORS=88    Z   ds=4 rs=2
+  TICK= 510  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=82('R')    NOS=1647       TORS=88        ds=3 rs=2
+  TICK= 511  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=82('R')    NOS=1647       TORS=88    Z   ds=3 rs=2
+  TICK= 512  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=82('R')    NOS=1647       TORS=88    Z   ds=3 rs=2
+  TICK= 513  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=82('R')    NOS=1647       TORS=88    Z   ds=3 rs=2
+  TICK= 514  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=82('R')    NOS=82('R')    TORS=88    Z   ds=4 rs=2
+  TICK= 515  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=82('R')    NOS=82('R')    TORS=88    Z   ds=4 rs=2
+  TICK= 516  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=82('R')    TORS=88    Z   ds=5 rs=2
+  TICK= 517  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=82('R')    TORS=88    Z   ds=5 rs=2
+  TICK= 518  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=82('R')    TORS=88        ds=4 rs=2
+  TICK= 519  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=82('R')    TORS=88    Z   ds=4 rs=2
+  TICK= 520  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=82('R')    NOS=1647       TORS=88        ds=3 rs=2
+  TICK= 521  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=82('R')    NOS=1647       TORS=88    Z   ds=3 rs=2
+  TICK= 522  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1647       NOS=82('R')    TORS=88    Z   ds=3 rs=2
+  TICK= 523  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1647       NOS=82('R')    TORS=88    Z   ds=3 rs=2
+  TICK= 524  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=82('R')    NOS=1647       TORS=88    Z   ds=4 rs=2
+  TICK= 525  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=82('R')    NOS=1647       TORS=88    Z   ds=4 rs=2
+  TICK= 526  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1729       NOS=82('R')    TORS=88        ds=3 rs=2
+  TICK= 527  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1729       NOS=82('R')    TORS=88    Z   ds=3 rs=2
+  TICK= 528  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=82('R')    NOS=1729       TORS=88    Z   ds=3 rs=2
+  TICK= 529  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=82('R')    NOS=1729       TORS=88    Z   ds=3 rs=2
+  TICK= 530  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=82('R')    TORS=88    Z   ds=4 rs=2
+  TICK= 531  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=82('R')    TORS=88    Z   ds=4 rs=2
+  TICK= 532  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=81('Q')    NOS=1729       TORS=88        ds=3 rs=2
+  TICK= 533  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=81('Q')    NOS=1729       TORS=88    Z   ds=3 rs=2
+  TICK= 534  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=81('Q')    NOS=1729       TORS=88    Z   ds=3 rs=2
+  TICK= 535  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=81('Q')    NOS=1729       TORS=88    Z   ds=3 rs=2
+  TICK= 536  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=81('Q')    NOS=81('Q')    TORS=88    Z   ds=4 rs=2
+  TICK= 537  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=81('Q')    NOS=81('Q')    TORS=88    Z   ds=4 rs=2
+  TICK= 538  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=81('Q')    TORS=88    Z   ds=5 rs=2
+  TICK= 539  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=81('Q')    TORS=88    Z   ds=5 rs=2
+  TICK= 540  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=81('Q')    TORS=88        ds=4 rs=2
+  TICK= 541  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=81('Q')    TORS=88    Z   ds=4 rs=2
+  TICK= 542  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=81('Q')    NOS=1729       TORS=88        ds=3 rs=2
+  TICK= 543  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=81('Q')    NOS=1729       TORS=88    Z   ds=3 rs=2
+  TICK= 544  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1729       NOS=81('Q')    TORS=88    Z   ds=3 rs=2
+  TICK= 545  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1729       NOS=81('Q')    TORS=88    Z   ds=3 rs=2
+  TICK= 546  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=81('Q')    NOS=1729       TORS=88    Z   ds=4 rs=2
+  TICK= 547  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=81('Q')    NOS=1729       TORS=88    Z   ds=4 rs=2
+  TICK= 548  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1810       NOS=81('Q')    TORS=88        ds=3 rs=2
+  TICK= 549  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1810       NOS=81('Q')    TORS=88    Z   ds=3 rs=2
+  TICK= 550  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=81('Q')    NOS=1810       TORS=88    Z   ds=3 rs=2
+  TICK= 551  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=81('Q')    NOS=1810       TORS=88    Z   ds=3 rs=2
+  TICK= 552  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=81('Q')    TORS=88    Z   ds=4 rs=2
+  TICK= 553  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=81('Q')    TORS=88    Z   ds=4 rs=2
+  TICK= 554  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=80('P')    NOS=1810       TORS=88        ds=3 rs=2
+  TICK= 555  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=80('P')    NOS=1810       TORS=88    Z   ds=3 rs=2
+  TICK= 556  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=80('P')    NOS=1810       TORS=88    Z   ds=3 rs=2
+  TICK= 557  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=80('P')    NOS=1810       TORS=88    Z   ds=3 rs=2
+  TICK= 558  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=80('P')    NOS=80('P')    TORS=88    Z   ds=4 rs=2
+  TICK= 559  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=80('P')    NOS=80('P')    TORS=88    Z   ds=4 rs=2
+  TICK= 560  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=80('P')    TORS=88    Z   ds=5 rs=2
+  TICK= 561  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=80('P')    TORS=88    Z   ds=5 rs=2
+  TICK= 562  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=80('P')    TORS=88        ds=4 rs=2
+  TICK= 563  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=80('P')    TORS=88    Z   ds=4 rs=2
+  TICK= 564  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=80('P')    NOS=1810       TORS=88        ds=3 rs=2
+  TICK= 565  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=80('P')    NOS=1810       TORS=88    Z   ds=3 rs=2
+  TICK= 566  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1810       NOS=80('P')    TORS=88    Z   ds=3 rs=2
+  TICK= 567  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1810       NOS=80('P')    TORS=88    Z   ds=3 rs=2
+  TICK= 568  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=80('P')    NOS=1810       TORS=88    Z   ds=4 rs=2
+  TICK= 569  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=80('P')    NOS=1810       TORS=88    Z   ds=4 rs=2
+  TICK= 570  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1890       NOS=80('P')    TORS=88        ds=3 rs=2
+  TICK= 571  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1890       NOS=80('P')    TORS=88    Z   ds=3 rs=2
+  TICK= 572  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=80('P')    NOS=1890       TORS=88    Z   ds=3 rs=2
+  TICK= 573  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=80('P')    NOS=1890       TORS=88    Z   ds=3 rs=2
+  TICK= 574  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=80('P')    TORS=88    Z   ds=4 rs=2
+  TICK= 575  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=80('P')    TORS=88    Z   ds=4 rs=2
+  TICK= 576  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=79('O')    NOS=1890       TORS=88        ds=3 rs=2
+  TICK= 577  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=79('O')    NOS=1890       TORS=88    Z   ds=3 rs=2
+  TICK= 578  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=79('O')    NOS=1890       TORS=88    Z   ds=3 rs=2
+  TICK= 579  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=79('O')    NOS=1890       TORS=88    Z   ds=3 rs=2
+  TICK= 580  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=79('O')    NOS=79('O')    TORS=88    Z   ds=4 rs=2
+  TICK= 581  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=79('O')    NOS=79('O')    TORS=88    Z   ds=4 rs=2
+  TICK= 582  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=79('O')    TORS=88    Z   ds=5 rs=2
+  TICK= 583  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=79('O')    TORS=88    Z   ds=5 rs=2
+  TICK= 584  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=79('O')    TORS=88        ds=4 rs=2
+  TICK= 585  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=79('O')    TORS=88    Z   ds=4 rs=2
+  TICK= 586  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=79('O')    NOS=1890       TORS=88        ds=3 rs=2
+  TICK= 587  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=79('O')    NOS=1890       TORS=88    Z   ds=3 rs=2
+  TICK= 588  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1890       NOS=79('O')    TORS=88    Z   ds=3 rs=2
+  TICK= 589  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1890       NOS=79('O')    TORS=88    Z   ds=3 rs=2
+  TICK= 590  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=79('O')    NOS=1890       TORS=88    Z   ds=4 rs=2
+  TICK= 591  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=79('O')    NOS=1890       TORS=88    Z   ds=4 rs=2
+  TICK= 592  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=1969       NOS=79('O')    TORS=88        ds=3 rs=2
+  TICK= 593  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=1969       NOS=79('O')    TORS=88    Z   ds=3 rs=2
+  TICK= 594  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=79('O')    NOS=1969       TORS=88    Z   ds=3 rs=2
+  TICK= 595  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=79('O')    NOS=1969       TORS=88    Z   ds=3 rs=2
+  TICK= 596  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=79('O')    TORS=88    Z   ds=4 rs=2
+  TICK= 597  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=79('O')    TORS=88    Z   ds=4 rs=2
+  TICK= 598  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=78('N')    NOS=1969       TORS=88        ds=3 rs=2
+  TICK= 599  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=78('N')    NOS=1969       TORS=88    Z   ds=3 rs=2
+  TICK= 600  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=78('N')    NOS=1969       TORS=88    Z   ds=3 rs=2
+  TICK= 601  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=78('N')    NOS=1969       TORS=88    Z   ds=3 rs=2
+  TICK= 602  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=78('N')    NOS=78('N')    TORS=88    Z   ds=4 rs=2
+  TICK= 603  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=78('N')    NOS=78('N')    TORS=88    Z   ds=4 rs=2
+  TICK= 604  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=78('N')    TORS=88    Z   ds=5 rs=2
+  TICK= 605  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=78('N')    TORS=88    Z   ds=5 rs=2
+  TICK= 606  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=78('N')    TORS=88        ds=4 rs=2
+  TICK= 607  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=78('N')    TORS=88    Z   ds=4 rs=2
+  TICK= 608  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=78('N')    NOS=1969       TORS=88        ds=3 rs=2
+  TICK= 609  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=78('N')    NOS=1969       TORS=88    Z   ds=3 rs=2
+  TICK= 610  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=1969       NOS=78('N')    TORS=88    Z   ds=3 rs=2
+  TICK= 611  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=1969       NOS=78('N')    TORS=88    Z   ds=3 rs=2
+  TICK= 612  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=78('N')    NOS=1969       TORS=88    Z   ds=4 rs=2
+  TICK= 613  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=78('N')    NOS=1969       TORS=88    Z   ds=4 rs=2
+  TICK= 614  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=2047       NOS=78('N')    TORS=88        ds=3 rs=2
+  TICK= 615  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=2047       NOS=78('N')    TORS=88    Z   ds=3 rs=2
+  TICK= 616  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=78('N')    NOS=2047       TORS=88    Z   ds=3 rs=2
+  TICK= 617  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=78('N')    NOS=2047       TORS=88    Z   ds=3 rs=2
+  TICK= 618  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=78('N')    TORS=88    Z   ds=4 rs=2
+  TICK= 619  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=78('N')    TORS=88    Z   ds=4 rs=2
+  TICK= 620  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=77('M')    NOS=2047       TORS=88        ds=3 rs=2
+  TICK= 621  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=77('M')    NOS=2047       TORS=88    Z   ds=3 rs=2
+  TICK= 622  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=77('M')    NOS=2047       TORS=88    Z   ds=3 rs=2
+  TICK= 623  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=77('M')    NOS=2047       TORS=88    Z   ds=3 rs=2
+  TICK= 624  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=77('M')    NOS=77('M')    TORS=88    Z   ds=4 rs=2
+  TICK= 625  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=77('M')    NOS=77('M')    TORS=88    Z   ds=4 rs=2
+  TICK= 626  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=77('M')    TORS=88    Z   ds=5 rs=2
+  TICK= 627  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=77('M')    TORS=88    Z   ds=5 rs=2
+  TICK= 628  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=77('M')    TORS=88        ds=4 rs=2
+  TICK= 629  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=77('M')    TORS=88    Z   ds=4 rs=2
+  TICK= 630  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=77('M')    NOS=2047       TORS=88        ds=3 rs=2
+  TICK= 631  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=77('M')    NOS=2047       TORS=88    Z   ds=3 rs=2
+  TICK= 632  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=2047       NOS=77('M')    TORS=88    Z   ds=3 rs=2
+  TICK= 633  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=2047       NOS=77('M')    TORS=88    Z   ds=3 rs=2
+  TICK= 634  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=77('M')    NOS=2047       TORS=88    Z   ds=4 rs=2
+  TICK= 635  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=77('M')    NOS=2047       TORS=88    Z   ds=4 rs=2
+  TICK= 636  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=2124       NOS=77('M')    TORS=88        ds=3 rs=2
+  TICK= 637  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=2124       NOS=77('M')    TORS=88    Z   ds=3 rs=2
+  TICK= 638  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=77('M')    NOS=2124       TORS=88    Z   ds=3 rs=2
+  TICK= 639  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=77('M')    NOS=2124       TORS=88    Z   ds=3 rs=2
+  TICK= 640  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=77('M')    TORS=88    Z   ds=4 rs=2
+  TICK= 641  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=77('M')    TORS=88    Z   ds=4 rs=2
+  TICK= 642  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=76('L')    NOS=2124       TORS=88        ds=3 rs=2
+  TICK= 643  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=76('L')    NOS=2124       TORS=88    Z   ds=3 rs=2
+  TICK= 644  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=76('L')    NOS=2124       TORS=88    Z   ds=3 rs=2
+  TICK= 645  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=76('L')    NOS=2124       TORS=88    Z   ds=3 rs=2
+  TICK= 646  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=76('L')    NOS=76('L')    TORS=88    Z   ds=4 rs=2
+  TICK= 647  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=76('L')    NOS=76('L')    TORS=88    Z   ds=4 rs=2
+  TICK= 648  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=76('L')    TORS=88    Z   ds=5 rs=2
+  TICK= 649  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=76('L')    TORS=88    Z   ds=5 rs=2
+  TICK= 650  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=76('L')    TORS=88        ds=4 rs=2
+  TICK= 651  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=76('L')    TORS=88    Z   ds=4 rs=2
+  TICK= 652  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=76('L')    NOS=2124       TORS=88        ds=3 rs=2
+  TICK= 653  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=76('L')    NOS=2124       TORS=88    Z   ds=3 rs=2
+  TICK= 654  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=2124       NOS=76('L')    TORS=88    Z   ds=3 rs=2
+  TICK= 655  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=2124       NOS=76('L')    TORS=88    Z   ds=3 rs=2
+  TICK= 656  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=76('L')    NOS=2124       TORS=88    Z   ds=4 rs=2
+  TICK= 657  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=76('L')    NOS=2124       TORS=88    Z   ds=4 rs=2
+  TICK= 658  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=2200       NOS=76('L')    TORS=88        ds=3 rs=2
+  TICK= 659  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=2200       NOS=76('L')    TORS=88    Z   ds=3 rs=2
+  TICK= 660  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=76('L')    NOS=2200       TORS=88    Z   ds=3 rs=2
+  TICK= 661  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=76('L')    NOS=2200       TORS=88    Z   ds=3 rs=2
+  TICK= 662  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=76('L')    TORS=88    Z   ds=4 rs=2
+  TICK= 663  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=76('L')    TORS=88    Z   ds=4 rs=2
+  TICK= 664  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=75('K')    NOS=2200       TORS=88        ds=3 rs=2
+  TICK= 665  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=75('K')    NOS=2200       TORS=88    Z   ds=3 rs=2
+  TICK= 666  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=75('K')    NOS=2200       TORS=88    Z   ds=3 rs=2
+  TICK= 667  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=75('K')    NOS=2200       TORS=88    Z   ds=3 rs=2
+  TICK= 668  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=75('K')    NOS=75('K')    TORS=88    Z   ds=4 rs=2
+  TICK= 669  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=75('K')    NOS=75('K')    TORS=88    Z   ds=4 rs=2
+  TICK= 670  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=75('K')    TORS=88    Z   ds=5 rs=2
+  TICK= 671  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=75('K')    TORS=88    Z   ds=5 rs=2
+  TICK= 672  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=75('K')    TORS=88        ds=4 rs=2
+  TICK= 673  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=75('K')    TORS=88    Z   ds=4 rs=2
+  TICK= 674  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=75('K')    NOS=2200       TORS=88        ds=3 rs=2
+  TICK= 675  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=75('K')    NOS=2200       TORS=88    Z   ds=3 rs=2
+  TICK= 676  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=2200       NOS=75('K')    TORS=88    Z   ds=3 rs=2
+  TICK= 677  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=2200       NOS=75('K')    TORS=88    Z   ds=3 rs=2
+  TICK= 678  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=75('K')    NOS=2200       TORS=88    Z   ds=4 rs=2
+  TICK= 679  mPC= 0(FETCH       )  PC= 27->27   IR=ADD         TOS=75('K')    NOS=2200       TORS=88    Z   ds=4 rs=2
+  TICK= 680  mPC= 6(EXEC_ADD    )  PC= 27->28   IR=ADD         TOS=2275       NOS=75('K')    TORS=88        ds=3 rs=2
+  TICK= 681  mPC= 0(FETCH       )  PC= 28->28   IR=SWAP        TOS=2275       NOS=75('K')    TORS=88    Z   ds=3 rs=2
+  TICK= 682  mPC= 4(EXEC_SWAP   )  PC= 28->29   IR=SWAP        TOS=75('K')    NOS=2275       TORS=88    Z   ds=3 rs=2
+  TICK= 683  mPC= 0(FETCH       )  PC= 29->29   IR=PUSH 1      TOS=75('K')    NOS=2275       TORS=88    Z   ds=3 rs=2
+  TICK= 684  mPC= 1(EXEC_PUSH   )  PC= 29->30   IR=PUSH 1      TOS=1          NOS=75('K')    TORS=88    Z   ds=4 rs=2
+  TICK= 685  mPC= 0(FETCH       )  PC= 30->30   IR=SUB         TOS=1          NOS=75('K')    TORS=88    Z   ds=4 rs=2
+  TICK= 686  mPC= 7(EXEC_SUB    )  PC= 30->31   IR=SUB         TOS=74('J')    NOS=2275       TORS=88        ds=3 rs=2
+  TICK= 687  mPC= 0(FETCH       )  PC= 31->31   IR=JMP 21      TOS=74('J')    NOS=2275       TORS=88    Z   ds=3 rs=2
+  TICK= 688  mPC=16(EXEC_JMP    )  PC= 31->21   IR=JMP 21      TOS=74('J')    NOS=2275       TORS=88    Z   ds=3 rs=2
+  TICK= 689  mPC= 0(FETCH       )  PC= 21->21   IR=DUP         TOS=74('J')    NOS=2275       TORS=88    Z   ds=3 rs=2
+  TICK= 690  mPC= 2(EXEC_DUP    )  PC= 21->22   IR=DUP         TOS=74('J')    NOS=74('J')    TORS=88    Z   ds=4 rs=2
+  TICK= 691  mPC= 0(FETCH       )  PC= 22->22   IR=PUSH 0      TOS=74('J')    NOS=74('J')    TORS=88    Z   ds=4 rs=2
+  TICK= 692  mPC= 1(EXEC_PUSH   )  PC= 22->23   IR=PUSH 0      TOS=0          NOS=74('J')    TORS=88    Z   ds=5 rs=2
+  TICK= 693  mPC= 0(FETCH       )  PC= 23->23   IR=GT          TOS=0          NOS=74('J')    TORS=88    Z   ds=5 rs=2
+  TICK= 694  mPC=13(EXEC_GT     )  PC= 23->24   IR=GT          TOS=1          NOS=74('J')    TORS=88        ds=4 rs=2
+  TICK= 695  mPC= 0(FETCH       )  PC= 24->24   IR=JZ 32       TOS=1          NOS=74('J')    TORS=88    Z   ds=4 rs=2
+  TICK= 696  mPC=17(EXEC_JZ     )  PC= 24->25   IR=JZ 32       TOS=74('J')    NOS=2275       TORS=88        ds=3 rs=2
+  TICK= 697  mPC= 0(FETCH       )  PC= 25->25   IR=SWAP        TOS=74('J')    NOS=2275       TORS=88    Z   ds=3 rs=2
+  TICK= 698  mPC= 4(EXEC_SWAP   )  PC= 25->26   IR=SWAP        TOS=2275       NOS=74('J')    TORS=88    Z   ds=3 rs=2
+  TICK= 699  mPC= 0(FETCH       )  PC= 26->26   IR=OVER        TOS=2275       NOS=74('J')    TORS=88    Z   ds=3 rs=2
+  TICK= 700  mPC= 5(EXEC_OVER   )  PC= 26->27   IR=OVER        TOS=74('J')    NOS=2275       TORS=88    Z   ds=4 rs=2
 out_code_hex: |
   ; CODE SECTION
-  0 - 11000154 - CALL 340
-  4 - 16000000 - HALT
-  8 - 00000000 - PUSH 0
-  12 - 14000000 - IN 0
-  16 - 01000000 - DUP
-  20 - 0000000A - PUSH 10
-  24 - 0A000000 - EQ
-  28 - 00000000 - PUSH 0
-  32 - 0A000000 - EQ
-  36 - 10000044 - JZ 68
-  40 - 00000030 - PUSH 48
-  44 - 06000000 - SUB
-  48 - 03000000 - SWAP
-  52 - 0000000A - PUSH 10
-  56 - 07000000 - MUL
-  60 - 05000000 - ADD
-  64 - 0F00000C - JMP 12
-  68 - 02000000 - DROP
+  0 - 11000055 - CALL 85
+  1 - 16000000 - HALT
+  2 - 00000000 - PUSH 0
+  3 - 14000000 - IN 0
+  4 - 01000000 - DUP
+  5 - 0000000A - PUSH 10
+  6 - 0A000000 - EQ
+  7 - 00000000 - PUSH 0
+  8 - 0A000000 - EQ
+  9 - 10000011 - JZ 17
+  10 - 00000030 - PUSH 48
+  11 - 06000000 - SUB
+  12 - 03000000 - SWAP
+  13 - 0000000A - PUSH 10
+  14 - 07000000 - MUL
+  15 - 05000000 - ADD
+  16 - 0F000003 - JMP 3
+  17 - 02000000 - DROP
+  18 - 12000000 - RET
+  19 - 00000000 - PUSH 0
+  20 - 03000000 - SWAP
+  21 - 01000000 - DUP
+  22 - 00000000 - PUSH 0
+  23 - 0C000000 - GT
+  24 - 10000020 - JZ 32
+  25 - 03000000 - SWAP
+  26 - 04000000 - OVER
+  27 - 05000000 - ADD
+  28 - 03000000 - SWAP
+  29 - 00000001 - PUSH 1
+  30 - 06000000 - SUB
+  31 - 0F000015 - JMP 21
+  32 - 02000000 - DROP
+  33 - 12000000 - RET
+  34 - 00000000 - PUSH 0
+  35 - 03000000 - SWAP
+  36 - 01000000 - DUP
+  37 - 00000000 - PUSH 0
+  38 - 0C000000 - GT
+  39 - 10000031 - JZ 49
+  40 - 03000000 - SWAP
+  41 - 04000000 - OVER
+  42 - 01000000 - DUP
+  43 - 07000000 - MUL
+  44 - 05000000 - ADD
+  45 - 03000000 - SWAP
+  46 - 00000001 - PUSH 1
+  47 - 06000000 - SUB
+  48 - 0F000024 - JMP 36
+  49 - 02000000 - DROP
+  50 - 12000000 - RET
+  51 - 01000000 - DUP
+  52 - 00000000 - PUSH 0
+  53 - 0A000000 - EQ
+  54 - 10000039 - JZ 57
+  55 - 02000000 - DROP
+  56 - 0F000048 - JMP 72
+  57 - 01000000 - DUP
+  58 - 0000000A - PUSH 10
+  59 - 08000000 - DIV
+  60 - 01000000 - DUP
+  61 - 00000000 - PUSH 0
+  62 - 0C000000 - GT
+  63 - 10000042 - JZ 66
+  64 - 11000033 - CALL 51
+  65 - 0F000043 - JMP 67
+  66 - 02000000 - DROP
+  67 - 0000000A - PUSH 10
+  68 - 09000000 - MOD
+  69 - 00000030 - PUSH 48
+  70 - 05000000 - ADD
+  71 - 15000001 - OUT 1
   72 - 12000000 - RET
-  76 - 00000000 - PUSH 0
-  80 - 03000000 - SWAP
-  84 - 01000000 - DUP
-  88 - 00000000 - PUSH 0
-  92 - 0C000000 - GT
-  96 - 10000080 - JZ 128
-  100 - 03000000 - SWAP
-  104 - 04000000 - OVER
-  108 - 05000000 - ADD
-  112 - 03000000 - SWAP
-  116 - 00000001 - PUSH 1
-  120 - 06000000 - SUB
-  124 - 0F000054 - JMP 84
-  128 - 02000000 - DROP
-  132 - 12000000 - RET
-  136 - 00000000 - PUSH 0
-  140 - 03000000 - SWAP
-  144 - 01000000 - DUP
-  148 - 00000000 - PUSH 0
-  152 - 0C000000 - GT
-  156 - 100000C4 - JZ 196
-  160 - 03000000 - SWAP
-  164 - 04000000 - OVER
-  168 - 01000000 - DUP
-  172 - 07000000 - MUL
-  176 - 05000000 - ADD
-  180 - 03000000 - SWAP
-  184 - 00000001 - PUSH 1
-  188 - 06000000 - SUB
-  192 - 0F000090 - JMP 144
-  196 - 02000000 - DROP
-  200 - 12000000 - RET
-  204 - 01000000 - DUP
-  208 - 00000000 - PUSH 0
-  212 - 0A000000 - EQ
-  216 - 100000E4 - JZ 228
-  220 - 02000000 - DROP
-  224 - 0F000120 - JMP 288
-  228 - 01000000 - DUP
-  232 - 0000000A - PUSH 10
-  236 - 08000000 - DIV
-  240 - 01000000 - DUP
-  244 - 00000000 - PUSH 0
-  248 - 0C000000 - GT
-  252 - 10000108 - JZ 264
-  256 - 110000CC - CALL 204
-  260 - 0F00010C - JMP 268
-  264 - 02000000 - DROP
-  268 - 0000000A - PUSH 10
-  272 - 09000000 - MOD
-  276 - 00000030 - PUSH 48
-  280 - 05000000 - ADD
-  284 - 15000001 - OUT 1
-  288 - 12000000 - RET
-  292 - 01000000 - DUP
-  296 - 00000000 - PUSH 0
-  300 - 0A000000 - EQ
-  304 - 10000144 - JZ 324
-  308 - 02000000 - DROP
-  312 - 00000030 - PUSH 48
-  316 - 15000001 - OUT 1
-  320 - 0F000148 - JMP 328
-  324 - 110000CC - CALL 204
-  328 - 0000000A - PUSH 10
-  332 - 15000001 - OUT 1
-  336 - 12000000 - RET
-  340 - 11000008 - CALL 8
-  344 - 01000000 - DUP
-  348 - 1100004C - CALL 76
-  352 - 01000000 - DUP
-  356 - 07000000 - MUL
-  360 - 03000000 - SWAP
-  364 - 11000088 - CALL 136
-  368 - 06000000 - SUB
-  372 - 11000124 - CALL 292
-  376 - 12000000 - RET
-
+  73 - 01000000 - DUP
+  74 - 00000000 - PUSH 0
+  75 - 0A000000 - EQ
+  76 - 10000051 - JZ 81
+  77 - 02000000 - DROP
+  78 - 00000030 - PUSH 48
+  79 - 15000001 - OUT 1
+  80 - 0F000052 - JMP 82
+  81 - 11000033 - CALL 51
+  82 - 0000000A - PUSH 10
+  83 - 15000001 - OUT 1
+  84 - 12000000 - RET
+  85 - 11000002 - CALL 2
+  86 - 01000000 - DUP
+  87 - 11000013 - CALL 19
+  88 - 01000000 - DUP
+  89 - 07000000 - MUL
+  90 - 03000000 - SWAP
+  91 - 11000022 - CALL 34
+  92 - 06000000 - SUB
+  93 - 11000049 - CALL 73
+  94 - 12000000 - RET
+  
   ; DATA SECTION
-out_code: 
-  AAAAXwAAAAARAAFUFgAAAAAAAAAUAAAAAQAAAAAAAAoKAAAAAAAAAAoAAAAQAABEAAAAMAYAAAADAAAAAAAACgcAAAAFAAAADwAADAIAAAASAAAAAAAAAAMAAAABAAAAAAAAAAwAAAAQAACAAwAAAAQAAAAFAAAAAwAAAAAAAAEGAAAADwAAVAIAAAASAAAAAAAAAAMAAAABAAAAAAAAAAwAAAAQAADEAwAAAAQAAAABAAAABwAAAAUAAAADAAAAAAAAAQYAAAAPAACQAgAAABIAAAABAAAAAAAAAAoAAAAQAADkAgAAAA8AASABAAAAAAAACggAAAABAAAAAAAAAAwAAAAQAAEIEQAAzA8AAQwCAAAAAAAACgkAAAAAAAAwBQAAABUAAAESAAAAAQAAAAAAAAAKAAAAEAABRAIAAAAAAAAwFQAAAQ8AAUgRAADMAAAAChUAAAESAAAAEQAACAEAAAARAABMAQAAAAcAAAADAAAAEQAAiAYAAAARAAEkEgAAAA==
+out_code: AAAAXwAAAAARAABVFgAAAAAAAAAUAAAAAQAAAAAAAAoKAAAAAAAAAAoAAAAQAAARAAAAMAYAAAADAAAAAAAACgcAAAAFAAAADwAAAwIAAAASAAAAAAAAAAMAAAABAAAAAAAAAAwAAAAQAAAgAwAAAAQAAAAFAAAAAwAAAAAAAAEGAAAADwAAFQIAAAASAAAAAAAAAAMAAAABAAAAAAAAAAwAAAAQAAAxAwAAAAQAAAABAAAABwAAAAUAAAADAAAAAAAAAQYAAAAPAAAkAgAAABIAAAABAAAAAAAAAAoAAAAQAAA5AgAAAA8AAEgBAAAAAAAACggAAAABAAAAAAAAAAwAAAAQAABCEQAAMw8AAEMCAAAAAAAACgkAAAAAAAAwBQAAABUAAAESAAAAAQAAAAAAAAAKAAAAEAAAUQIAAAAAAAAwFQAAAQ8AAFIRAAAzAAAAChUAAAESAAAAEQAAAgEAAAARAAATAQAAAAcAAAADAAAAEQAAIgYAAAARAABJEgAAAA==

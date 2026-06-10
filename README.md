@@ -118,11 +118,11 @@ comment       = "(" , { not-")" } , ")"
 ```text
         Instruction Memory                  Data Memory
         ──────────────────            ─────────────────────────────
-   0x0  │ инструкция      │      0x0  │ variable cell #0          │
-   0x4  │ инструкция      │      0x4  │ variable cell #1          │
+     0  │ инструкция      │        0  │ variable cell #0          │
+     1  │ инструкция      │        1  │ variable cell #1          │
         │ ...             │           │ ...                       │
-        │ <user words>    │     0x4V  │ pstr literal #0: len      │
-        │ __emit_str__    │     0x4V+4│ pstr literal #0: ch0      │
+        │ <user words>    │        V  │ pstr literal #0: len      │
+        │ __emit_str__    │      V+1  │ pstr literal #0: ch0      │
         └─────────────────┘           └───────────────────────────┘
 ```
 
@@ -203,11 +203,11 @@ offset  size  поле
 
 ## Транслятор
 
-Интерфейс командной строки: `python translator.py <input.forth> <output.bin>`
+Интерфейс командной строки: `python src/translator.py <input.forth> <output.bin>`
 
 Создаёт два файла: `<output.bin>` и `<output.bin>.hex`.
 
-Реализован в модуле: [translator.py](translator.py).
+Реализован в модуле: [src/translator.py](src/translator.py).
 
 Этапы трансляции:
 
@@ -258,9 +258,9 @@ x load square x store
 
 ## Модель процессора
 
-Интерфейс командной строки: `python machine.py <code.bin> [<input.txt>] [--limit N] [--log {debug|info|warning|off}]`
+Интерфейс командной строки: `python src/machine.py <code.bin> [<input.txt>] [--limit N] [--log {debug|info|warning|off}]`
 
-Реализована в модуле: [machine.py](machine.py).
+Реализована в модуле: [src/machine.py](src/machine.py).
 
 ### DataPath
 
@@ -297,13 +297,12 @@ x load square x store
 - `sel_mpc` -- источник mPC: FETCH / DISPATCH (каждая инструкция = FETCH + 1 exec-такт)
 - `rs_op` -- операция со стеком возвратов: NOP / PUSH_PC_PLUS_1 / POP
 - `latch_ir` -- защёлкнуть IR из памяти команд
-- `halt` -- остановить моделирование
 
 ### Микропрограмма
 
-Память микропрограмм -- 25 ячеек. Адрес 0 -- FETCH; адреса 1..24 -- execute (по одному такту на опкод). Итого **2 такта на инструкцию**.
+Память микропрограмм -- 24 ячейки. Адрес 0 -- FETCH; адреса 1..23 -- execute (по одному такту на опкод). Итого **2 такта на инструкцию**.
 
-Реализована в модуле: [microcode.py](microcode.py).
+Реализована в модуле: [src/microcode.py](src/microcode.py).
 
 | μPC | Лейбл | alu_op | ds_op | sel_tos | sel_carry | mem | io | sel_pc | sel_mpc | прочее |
 | ---:| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -323,8 +322,7 @@ x load square x store
 | 20 | EXEC_EXECUTE | -- | DROP | -- | -- | -- | -- | TODS | FETCH | rs_push |
 | 21 | EXEC_IN | -- | PUSH | IO | -- | -- | read | INC | FETCH | |
 | 22 | EXEC_OUT | -- | DROP | -- | -- | -- | write | INC | FETCH | |
-| 23 | EXEC_HALT | -- | -- | -- | -- | -- | -- | KEEP | KEEP | halt |
-| 24 | EXEC_CARRY | -- | PUSH | ALU | **True** | -- | -- | INC | FETCH | push c_flag |
+| 23 | EXEC_CARRY | -- | PUSH | ALU | **True** | -- | -- | INC | FETCH | push c_flag |
 
 Декодер `DISPATCH` по опкоду из `IR` выбирает адрес первой микроинструкции execute; `mPC` идёт последовательно до возврата в FETCH.
 
@@ -332,21 +330,21 @@ x load square x store
 
 ## Тестирование
 
-Тестирование выполняется при помощи golden-тестов, реализовано в: [golden_test.py](golden_test.py).
-Конфигурации (`golden/`):
+Тестирование выполняется при помощи golden-тестов, реализовано в: [src/golden_test.py](src/golden_test.py).
+Конфигурации (`src/golden/`):
 
 | Golden | Алгоритм | Что проверяет |
 | --- | --- | --- |
-| [hello.yml](golden/hello.yml) | hello | `pstr`-литералы, `."`, `__emit_str__`, `begin/while/repeat` |
-| [cat.yml](golden/cat.yml) | cat | `begin/again`, port I/O, остановка по EOF |
-| [hello_user_name.yml](golden/hello_user_name.yml) | hello_user_name | Чтение имени, приветствие, потоковый ввод-вывод |
-| [sort.yml](golden/sort.yml) | sort | Сортировка выбором; буфер через `variable buf 15 alloc`, `load`/`store` |
-| [double_arith.yml](golden/double_arith.yml) | арифметика двойной точности | 64-битное сложение; carry-флаг после ADD для переноса между словами |
-| [euler6.yml](golden/euler6.yml) | **prob2** | Project Euler #6 |
-| [exec_token.yml](golden/exec_token.yml) | демо `'`/`execute` | Execution token |
-| [pstr_demo.yml](golden/pstr_demo.yml) | демо `pstr` | Pascal-строки |
-| [harvard_demo.yml](golden/harvard_demo.yml) | демо Harvard | Раздельность памяти команд и данных |
-| [variables_demo.yml](golden/variables_demo.yml) | демо `variable` | `variable name = value` + `load`/`store` |
+| [hello.yml](src/golden/hello.yml) | hello | `pstr`-литералы, `."`, `__emit_str__`, `begin/while/repeat` |
+| [cat.yml](src/golden/cat.yml) | cat | `begin/again`, port I/O, остановка по EOF |
+| [hello_user_name.yml](src/golden/hello_user_name.yml) | hello_user_name | Чтение имени, приветствие, потоковый ввод-вывод |
+| [sort.yml](src/golden/sort.yml) | sort | Сортировка выбором; буфер через `variable buf 15 alloc`, `load`/`store` |
+| [double_arith.yml](src/golden/double_arith.yml) | арифметика двойной точности | 64-битное сложение; carry-флаг после ADD для переноса между словами |
+| [euler6.yml](src/golden/euler6.yml) | **alg2** | Project Euler #6 |
+| [exec_token.yml](src/golden/exec_token.yml) | демо `'`/`execute` | Execution token |
+| [pstr_demo.yml](src/golden/pstr_demo.yml) | демо `pstr` | Pascal-строки |
+| [harvard_demo.yml](src/golden/harvard_demo.yml) | демо Harvard | Раздельность памяти команд и данных |
+| [variables_demo.yml](src/golden/variables_demo.yml) | демо `variable` | `variable name = value` + `load`/`store` |
 
 Запустить тесты:
 
